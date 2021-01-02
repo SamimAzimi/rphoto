@@ -1,5 +1,8 @@
 import "./header.css";
 import navbarimage from "./original.jpg";
+import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+
 function Header() {
   return (
     <>
@@ -11,29 +14,22 @@ function Header() {
 
       <ul className="navbar">
         <li>
-          <a href="/home">
+          <Link to="#">
+            <FaBars></FaBars>
             <h2>Home</h2>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/gallary">
-            <h2>Gallary</h2>
-          </a>
+          <h2>Gallary</h2>
         </li>
         <li>
-          <a href="/clientgallary">
-            <h2>Couple Gallary (your Gallary)</h2>
-          </a>
+          <h2>Couple Gallary (your Gallary)</h2>
         </li>
         <li>
-          <a href="/contactus">
-            <h2>Contact Us</h2>
-          </a>
+          <h2>Contact Us</h2>
         </li>
         <li>
-          <a href="/aboutus">
-            <h2>About Us</h2>
-          </a>
+          <h2>About Us</h2>
         </li>
       </ul>
       <div className="container">
