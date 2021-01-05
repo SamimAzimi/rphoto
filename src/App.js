@@ -1,15 +1,27 @@
 import "./App.css";
 import Header from "./components/header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from "react";
+
 function App() {
+  const [isActive, setIsActive] = useState(true);
+
   return (
     <div className="App">
-      <Router>
+      <button
+        type="button"
+        className="menueToggleButton"
+        onClick={() => setIsActive(!isActive)}
+      >
+        show Menue bar
+      </button>
+
+      {isActive ? (
+        <div>
+          <h1>R photos</h1>
+        </div>
+      ) : (
         <Header />
-        <Switch>
-          <Route path="/" />
-        </Switch>
-      </Router>
+      )}
     </div>
   );
 }

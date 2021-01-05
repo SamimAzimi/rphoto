@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.menueToggleButton {
+  position: absolute;
+  right: 1%;
+  top: 5%;
+}

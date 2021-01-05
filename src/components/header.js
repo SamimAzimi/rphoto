@@ -14,10 +14,7 @@ function Header() {
 
       <ul className="navbar">
         <li>
-          <Link to="#">
-            <FaBars></FaBars>
-            <h2>Home</h2>
-          </Link>
+          <h2>Home</h2>
         </li>
         <li>
           <h2>Gallary</h2>

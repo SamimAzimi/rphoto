@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  height: 110vh;
+  height: 120vh;
+  width: 100vw;
   background-image: linear-gradient(20deg, red 10%, gray 100%);
 }
 header {
@@ -40,9 +41,6 @@ h2,
 p {
   margin-bottom: 30px;
   color: white;
-}
-a {
-  text-decoration: none;
 }
 
 h2:hover {
