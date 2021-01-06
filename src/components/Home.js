@@ -1,0 +1,40 @@
+import Slider from "react-animated-slider";
+import "react-animated-slider/build/horizontal.css";
+import Couple from "../images/gardenCouple.jpeg";
+import "./home.css";
+function Home() {
+  const slides = [
+    {
+      title: "Couple Aisle HD",
+      description: "Scared Moment Capture",
+      image: Couple,
+    },
+    {
+      title: "Best Focus",
+      description: "Focus on the special Mement",
+      image: Couple,
+    },
+    {
+      title: "Moment Capture",
+      description: "Every Wedding Moment is beautiful",
+      image: Couple,
+    },
+  ];
+  return (
+    <>
+      <main>
+        <Slider autoplay="600">
+          {slides.map((slide, index) => (
+            <div key={index}>
+              <h2>{slide.title}</h2>
+              <div>{slide.description}</div>
+              <img src={slide.image} alt="couple" />
+            </div>
+          ))}
+        </Slider>
+      </main>
+    </>
+  );
+}
+
+export default Home;

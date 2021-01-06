@@ -1,0 +1,23 @@
+main {
+  margin-left: 5%;
+  background-color: #a6768c 0a;
+  width: 900px;
+
+  height: 100%;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #bfb188;
+  background-image: url("../images/lavender.jpg"),
+    linear-gradient(
+      360deg,
+      var(--primary-gardient) 10%,
+      var(--secondary-gardient) 50%,
+      var(--third-gardient) 100%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+}

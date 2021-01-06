@@ -1,20 +1,38 @@
 .App {
   text-align: center;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Yellowtail&display=swap");
+:root {
+  --primary-color: #bfb188;
+  --opacity-color: #f2f2f2;
+  --main-color: #d9c6bf;
+  --brigh-color: #949fa6;
+  --brigh-color-shade: #bfaea8;
+  --bight-color-shade-2: #878a8c;
+  --bright-color-shade-3: #bfb188;
+  --shokh-color: #7f58a6;
+  --shokh-color-shade-1: #a6768c;
+  --semi-shokh: #bf8faa;
+  --dark-color: #2d2c40;
+  --dark-color-shade-1: #392259;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  /* extract gardient */
+
+  --primary-gardient: #cebbb2;
+  --secondary-gardient: #65586e;
+  --third-gardient: #efece9;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rphotographyheadingone {
+  text-align: center;
+  font-family: "Yellowtail", cursive;
+}
+.rphotographyheadingthree {
+  text-align: center;
+  font-family: "Bungee", cursive;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,18 +42,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .menueToggleButton {
   position: absolute;
   right: 1%;

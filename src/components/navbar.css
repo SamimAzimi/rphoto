@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #bfb188;
+  --opacity-color: #f2f2f2;
+  --main-color: #d9c6bf;
+  --brigh-color: #949fa6;
+  --brigh-color-shade: #bfaea8;
+  --bight-color-shade-2: #878a8c;
+  --bright-color-shade-3: #bfb188;
+  --shokh-color: #7f58a6;
+  --shokh-color-shade-1: #a6768c;
+  --semi-shokh: #bf8faa;
+  --dark-color: #2d2c40;
+  --dark-color-shade-1: #392259;
+
+  --primary-gardient: #cebbb2;
+  --secondary-gardient: #65586e;
+  --third-gardient: #efece9;
+}
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Handlee&family=Yellowtail&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  font-family: "Handlee", cursive;
+  outline-style: none;
+  color: #7f58a6;
+}
+a:hover {
+  outline-style: none;
+  color: #392259;
+}
+ul {
+  list-style-type: none;
+}
+
+header {
+  padding: 50px;
+  margin: 60px;
+  display: flexbox;
+  text-align: left;
+}
+.iconstyles {
+  color: var(--shokh-color);
+}
+
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 120vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    20deg,
+    var(--primary-gardient) 10%,
+    var(--secondary-gardient) 50%,
+    var(--third-gardient) 100%
+  );
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 20%;
+  text-decoration: none;
+}
+header {
+  padding: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+  text-decoration: none;
+}
+Link {
+  text-decoration: none;
+}
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  color: white;
+  text-decoration: none;
+}
+.navbar {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  text-align: left;
+  list-style: none;
+  font-size: large;
+  font-family: "Dancing Script", cursive;
+}
+h2,
+p {
+  margin-bottom: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+h2:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.container,
+.coupleimages {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  top: 8%;
+  right: 5%;
+  border-top-left-radius: 50%;
+  text-decoration: none;
+}
+*/

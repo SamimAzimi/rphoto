@@ -1,0 +1,21 @@
+import * as firebase from "firebase/app";
+import "firebase/storage";
+import "firebase/firestore";
+
+var firebaseConfig = {
+  apiKey: "AIzaSyDigf9zE3uAfXpUGzRdqH8S3NuwsRltItM",
+  authDomain: "rphoto-2d5ee.firebaseapp.com",
+  projectId: "rphoto-2d5ee",
+  storageBucket: "rphoto-2d5ee.appspot.com",
+  messagingSenderId: "259199097654",
+  appId: "1:259199097654:web:2fc72eade9d9fb523d3197",
+  measurementId: "G-81HWG03BCY",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+const projectStorage = firebase.storage();
+const projectfirestore = firebase.firestore();
+
+export { projectStorage, projectfirestore };
