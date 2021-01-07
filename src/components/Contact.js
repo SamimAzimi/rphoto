@@ -1,12 +1,13 @@
-
-
 function Contact() {
- 
+  return (
+    <form>
+      <input type="text" placeholder="Name" />
+      <input type="text" placeholder="Email Address:" />
+      <input type="text" placeholder="Subject" />
+      <input type="text" placeholder="Message" />
+      <button type="submit">Send</button>
+    </form>
+  );
+}
 
-    return (
-      <h1>this Contact Page</h1>
-    )
-  }
-  
-  export default Contact;
-  
+export default Contact;
