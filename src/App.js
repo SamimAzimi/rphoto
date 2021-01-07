@@ -7,6 +7,7 @@ import Gallary from "./components/Gallary";
 import NotFound from "./components/PageNotFound";
 import Home from "./components/Home";
 import Upload from "./components/upload";
+import Packages from "./components/Package";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/upload">
             <Upload />
+          </Route>
+          <Route path="/packages">
+            <Packages />
           </Route>
           <Route path="*">
             <NotFound />
