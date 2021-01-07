@@ -22,7 +22,7 @@ function Home() {
   ];
   return (
     <>
-      <main>
+      {/* <main>
         <Slider autoplay="600">
           {slides.map((slide, index) => (
             <div key={index}>
@@ -32,7 +32,7 @@ function Home() {
             </div>
           ))}
         </Slider>
-      </main>
+      </main> */}
     </>
   );
 }

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Redressed&display=swap");
 :root {
   --primary-color: #bfb188;
   --opacity-color: #f2f2f2;
@@ -20,13 +21,21 @@
   --third-gardient: #efece9;
 }
 .rphotographyheadingone {
-  text-align: center;
+  position: fixed;
+  top: 90px;
+  left: 200px;
+  color: var(--semi-shokh);
+  font-size: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
   font-family: "Yellowtail", cursive;
-  padding-top: 2px;
 }
 .rphotographyheadingthree {
-  text-align: center;
-  font-family: "Bungee", cursive;
+  font-size: 100px;
+  font-family: "Redressed", cursive;
 }
-
-
+.menubar {
+  color: #7f58a6;
+  position: fixed;
+  top: 8px;
+  left: 32px;
+}

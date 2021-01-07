@@ -1,4 +1,5 @@
 import Contact from "./Contact";
+import "./contact.css";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

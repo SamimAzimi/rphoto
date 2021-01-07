@@ -1,5 +1,6 @@
 import "./App.css";
-import Navbar from "./components/navbar";
+
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/About";
 import CoupleGallary from "./components/CoupleGallary";
@@ -8,14 +9,24 @@ import NotFound from "./components/PageNotFound";
 import Home from "./components/Home";
 import Upload from "./components/upload";
 import Packages from "./components/Package";
-
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function App() {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <>
-      <h1 className="rphotographyheadingone">Welcome To Rphotography </h1>
+      <button
+        classname="menubar"
+        type="button"
+        onClick={() => setIsActive(!isActive)}
+      >
+        <FontAwesomeIcon icon={faBars} />{" "}
+      </button>
+      <h1 className="rphotographyheadingone">R Photography</h1>
       <h3 className="rphotographyheadingthree">Wedding Photography</h3>
+      {isActive ? <Gallary /> : <About />}
       <Router>
-        <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
