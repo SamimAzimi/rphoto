@@ -66,7 +66,7 @@ function Header() {
               <Link to="/about">
                 <h2>
                   <FontAwesomeIcon
-                    icon={faProductHunt}
+                    icon={faLocationArrow}
                     style={{ color: "#65586e" }}
                   />
                   About Us
