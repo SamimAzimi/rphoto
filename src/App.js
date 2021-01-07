@@ -2,12 +2,11 @@ import "./App.css";
 import Navbar from "./components/navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import CoupleGallary from "./components/CoupleGallary";
 import Gallary from "./components/Gallary";
 import NotFound from "./components/PageNotFound";
 import Home from "./components/Home";
-import Upload from './components/upload'
+import Upload from "./components/upload";
 
 function App() {
   return (
@@ -27,7 +26,7 @@ function App() {
             <About />
           </Route>
           <Route path="/contact">
-            <Contact />
+            <About />
           </Route>
           <Route path="/couplegallary">
             <CoupleGallary />

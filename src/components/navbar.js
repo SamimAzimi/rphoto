@@ -7,7 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faInstagram,
-  faLinkedin
+  faProductHunt,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Header() {
@@ -50,7 +51,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="contact">
+              <Link to="/contact">
                 <h2>
                   {" "}
                   <FontAwesomeIcon
@@ -62,13 +63,24 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="about">
+              <Link to="/about">
                 <h2>
                   <FontAwesomeIcon
-                    icon={faLocationArrow}
+                    icon={faProductHunt}
                     style={{ color: "#65586e" }}
                   />
                   About Us
+                </h2>
+              </Link>
+            </li>
+            <li>
+              <Link to="/package">
+                <h2>
+                  <FontAwesomeIcon
+                    icon={faProductHunt}
+                    style={{ color: "#65586e" }}
+                  />
+                  Packages
                 </h2>
               </Link>
             </li>

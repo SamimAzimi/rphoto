@@ -1,3 +1,7 @@
+import Contact from "./Contact";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function About() {
   return (
     <>
@@ -20,14 +24,20 @@ function About() {
       <h4>Form my heart, to you both!</h4>
       <div className="location">
         <ul>
-          <li>Pickering Ontario</li>
-          <li>Phone</li>
+          <li>
+            <FontAwesomeIcon icon={faMapMarker} />
+            Pickering Ontario
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faWhatsapp} /> Phone
+          </li>
           <ul>
             <li>647-268-3001</li>
             <li>416-456-1558</li>
           </ul>
         </ul>
       </div>
+      <Contact />
     </>
   );
 }
