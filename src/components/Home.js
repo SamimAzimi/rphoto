@@ -1,4 +1,4 @@
-import Slider from "react-animated-slider";
+// import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 import Couple from "../images/gardenCouple.jpeg";
 import "./home.css";

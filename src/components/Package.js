@@ -1,5 +1,3 @@
-import { faTag } from "@fortawesome/free-solid-svg-icons";
-
 function Packages() {
   return (
     <>
