@@ -38,85 +38,17 @@ ul {
 
 header {
   padding: 50px;
-  margin: 60px;
+  margin: 6px;
+  margin-left: 6px;
+  margin-right: 10px;
   display: flexbox;
   text-align: left;
+  background-image: url(../images/lavender.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
 }
+
 .iconstyles {
   color: var(--shokh-color);
 }
-
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 120vh;
-  width: 100vw;
-  background-image: linear-gradient(
-    20deg,
-    var(--primary-gardient) 10%,
-    var(--secondary-gardient) 50%,
-    var(--third-gardient) 100%
-  );
-  text-decoration: none;
-}
-header {
-  width: 100%;
-  height: 100%;
-  text-align: left;
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  top: 20%;
-  text-decoration: none;
-}
-header {
-  padding: 50px;
-  color: #fff;
-  text-shadow: 1px 1px 1px #333;
-  text-decoration: none;
-}
-Link {
-  text-decoration: none;
-}
-h1 {
-  font-family: "Dancing Script", cursive;
-  font-size: 60px;
-  color: white;
-  text-decoration: none;
-}
-.navbar {
-  position: absolute;
-  top: 40%;
-  left: 10%;
-  text-align: left;
-  list-style: none;
-  font-size: large;
-  font-family: "Dancing Script", cursive;
-}
-h2,
-p {
-  margin-bottom: 30px;
-  color: white;
-  text-decoration: none;
-}
-
-h2:hover {
-  color: gray;
-  text-decoration: none;
-}
-
-.container,
-.coupleimages {
-  width: 800px;
-  height: 600px;
-  position: absolute;
-  top: 8%;
-  right: 5%;
-  border-top-left-radius: 50%;
-  text-decoration: none;
-}
-*/

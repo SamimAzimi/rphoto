@@ -15,7 +15,7 @@ function Header() {
   return (
     <>
       <header>
-        <div>
+        <div className="navbardiv">
           <ul className="navbar">
             <li>
               <Link to="/">

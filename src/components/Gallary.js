@@ -1,7 +1,12 @@
 import "./gallary.css";
 
 function Gallary() {
-  return <h1>this Gallary Page</h1>;
+
+  return <>
+   <div className="gallaryMain">
+     <h1>Moments Captured</h1>
+   </div>
+   </>
 }
 
 export default Gallary;

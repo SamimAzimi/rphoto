@@ -7,6 +7,7 @@ import CoupleGallary from "./components/CoupleGallary";
 import Gallary from "./components/Gallary";
 import NotFound from "./components/PageNotFound";
 import Home from "./components/Home";
+import Upload from './components/upload'
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/couplegallary">
             <CoupleGallary />
+          </Route>
+          <Route path="/upload">
+            <Upload />
           </Route>
           <Route path="*">
             <NotFound />

@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Yellowtail&display=swap");
 :root {
   --primary-color: #bfb188;
@@ -25,25 +22,11 @@
 .rphotographyheadingone {
   text-align: center;
   font-family: "Yellowtail", cursive;
+  padding-top: 2px;
 }
 .rphotographyheadingthree {
   text-align: center;
   font-family: "Bungee", cursive;
 }
 
-.App-header {
-  background-color: var(--primary-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.menueToggleButton {
-  position: absolute;
-  right: 1%;
-  top: 5%;
-}
