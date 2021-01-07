@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import './upload.css'
 import Progressbar from './progressbar'
 function Upload (){
 const [file,setFile] = useState(null)
@@ -26,7 +27,7 @@ const types = ['image/png', 'image/jpeg']
 
     <div className="output">
         {error && <div className="error">{error}</div> }
-        {file && <div>{file.name}</div>}
+         {/* {file && <div className="filename">{file.name}</div>} */}
 
         {file && <Progressbar file={file} setFile={setFile} />}
     </div>
