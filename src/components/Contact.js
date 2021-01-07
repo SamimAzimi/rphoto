@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Contact() {
   return (
-    <form>
+    <form className="contactform">
       <label htmlFor="name">
         <FontAwesomeIcon icon={faUser} />
         Name:
