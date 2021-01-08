@@ -41,10 +41,18 @@ button {
   border-style: none;
   width: 50px;
   height: 50px;
+  
+}
+button:hover {
+  outline-style: none;
+  font-size: 40px;
+  color: #cebbb2;
+  transform: scale(2px,2px);
 }
 
 .mainphotos {
   height: 100vh;
+  margin:1%;
   background-color:#bfb188 ;
 }
 
@@ -55,34 +63,34 @@ img {
 
 .couplephoto {
 position: relative;
-top:5%;
+background: cover;
 left:35%;
-  width:36%;
-  height: 90%;
+  width:30%;
+  height: 120%;
   z-index: 1;
+  rotate:(23deg);
 
 }
 .bridephoto {
   position: absolute;
-  top:5%;
+  top:30%;
   left:35%;
-    width:36%;
-    height: 90%;
+    width:30%;
+    height: 60%;
+    visibility: hidden;
 }
 .groomphoto{
   position: absolute;
-  top:5%;
-  left:35%;
-    width:36%;
-    height: 90%;
+  top:30%;
+  right:35%;
+    width:30%;
+    height: 60%;
+    visibility: hidden;
 }
 
-#callone {
+.bridephotoanimation {
+  opacity: 0.5;
+  transform-style: flat;
+  visibility:visible;
 
-  border: yellow solid 12px;
-}
-
-#calltwo {
-
-  transform: translateY(50px);
 }

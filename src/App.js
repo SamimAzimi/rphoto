@@ -7,6 +7,8 @@ import couple from './images/couple.jpeg'
 import groom from './images/groom.jpeg'
 import bride from './images/bride.jpeg'
 import React from 'react';
+// import Heading from './components/heading'
+import { Tween, Timeline } from 'react-gsap';
 import { Controller, Scene } from 'react-scrollmagic';
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -35,36 +37,84 @@ const handlescroll=()=>{
       >
         <FontAwesomeIcon icon={faBars}/>
       </button>
-
-    <div className="mainphotos" >
+      <div id="mainPhoto" className="mainphotos" >
+      <Controller  vertical="false" >
+        <Scene duration={100}
+         indicators="true"
+          triggerHook="onLeave"
+          reverse="true" 
+          triggerElement="#mainPhoto"
+          >
+    <Timeline target={ 
       <div className="couplephoto">
-      <Controller vertical="false" >
-        <Scene duration={1008} triggerElement="#calltwo" classToggle="#callone">
       <img src={couple} alt="pictureone" />
-      </Scene>
-      </Controller>
-      </div>
+      </div> }>
+      <Tween 
+from={{Y:"0"}}
+to={{y:"90",
+delay:"0.4",ease: "easeOut"}} >
+
+</Tween>
+         </Timeline>
+          </Scene>
+          </Controller>
 
 
+      <Controller  vertical="false" >
+        <Scene duration={100}
+         indicators="true"
+          triggerHook="onLeave"
+          reverse="true" 
+          triggerElement="#mainPhoto"
+          classToggle="bridephotoanimation"
+          >
+        
+<Timeline 
+target={
+  <div className="bridephoto" >
 
-      <div className="bridephoto" >
+  <img src={bride} alt="pictureone" />
 
-      <img src={bride} alt="pictureone" />
+  </div >
+} > 
+<Tween 
 
-      </div >
-      <div className="groomphoto" >
-      <img src={groom} alt="pictureone" />
+    to={{x:'70%', top:"30%",visibility:"visible",
+    delay:"0.4",ease: "easeOut"}} >
 
-      </div>
+</Tween>
+</Timeline>
+</Scene>
+</Controller>
+<Controller >
+<Scene duration={100}
+         indicators="true"
+          triggerHook="onLeave"
+          reverse="true" 
+          triggerElement="#mainPhoto"
+          classToggle="bridephotoanimation"
+          >
 
+<Timeline 
+target={
+  <div className="groomphoto" >
+  <img src={groom} alt="pictureone" />
+  </div>
+} > 
+<Tween 
 
+    to={{x:'-70%', top:"30%",visibility:"visible",
+    delay:"0.4",ease: "easeOut"}} >
 
+</Tween>
+</Timeline>
+</Scene>
+</Controller>
     </div>
-
       <h1 className="rphotographyheadingone"
       style={{
         position: "absolute",
-        left: `${setOffsetY}px`
+        left: `${setOffsetY}px`,
       }}>R Photography</h1>
     </>
   );
