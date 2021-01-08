@@ -1,59 +1,71 @@
 import "./App.css";
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import About from "./components/About";
-import CoupleGallary from "./components/CoupleGallary";
-import Gallary from "./components/Gallary";
-import NotFound from "./components/PageNotFound";
-import Home from "./components/Home";
-import Upload from "./components/upload";
-import Packages from "./components/Package";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import couple from './images/couple.jpeg'
+import groom from './images/groom.jpeg'
+import bride from './images/bride.jpeg'
+import React from 'react';
+import { Controller, Scene } from 'react-scrollmagic';
 function App() {
   const [isActive, setIsActive] = useState(false);
+  const [offsetY, setOffsetY] = useState(0)
 
+const handlescroll=()=>{
+
+  setOffsetY(window.pageYOffset)
+  console.log(offsetY)
+}
+  useEffect(()=>{
+    window.addEventListener("scroll",handlescroll)
+    console.log(offsetY)
+
+    return ()=> window.removeEventListener("scroll",handlescroll)
+   
+   
+  })
   return (
     <>
+    
       <button
-        classname="menubar"
+       
         type="button"
         onClick={() => setIsActive(!isActive)}
       >
-        <FontAwesomeIcon icon={faBars} />{" "}
+        <FontAwesomeIcon icon={faBars}/>
       </button>
-      <h1 className="rphotographyheadingone">R Photography</h1>
-      <h3 className="rphotographyheadingthree">Wedding Photography</h3>
-      {isActive ? <Gallary /> : <About />}
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/gallary">
-            <Gallary />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <About />
-          </Route>
-          <Route path="/couplegallary">
-            <CoupleGallary />
-          </Route>
-          <Route path="/upload">
-            <Upload />
-          </Route>
-          <Route path="/packages">
-            <Packages />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </Router>
+
+    <div className="mainphotos" >
+      <div className="couplephoto">
+      <Controller vertical="false" >
+        <Scene duration={1008} triggerElement="#calltwo" classToggle="#callone">
+      <img src={couple} alt="pictureone" />
+      </Scene>
+      </Controller>
+      </div>
+
+
+
+      <div className="bridephoto" >
+
+      <img src={bride} alt="pictureone" />
+
+      </div >
+      <div className="groomphoto" >
+      <img src={groom} alt="pictureone" />
+
+      </div>
+
+
+
+    </div>
+
+      <h1 className="rphotographyheadingone"
+      style={{
+        position: "absolute",
+        left: `${setOffsetY}px`
+      }}>R Photography</h1>
     </>
   );
 }

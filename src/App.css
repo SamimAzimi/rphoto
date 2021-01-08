@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Yellowtail&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Redressed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Arapey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
 :root {
   --primary-color: #bfb188;
   --opacity-color: #f2f2f2;
@@ -21,21 +21,68 @@
   --third-gardient: #efece9;
 }
 .rphotographyheadingone {
-  position: fixed;
-  top: 90px;
-  left: 200px;
-  color: var(--semi-shokh);
-  font-size: 100px;
-  background-color: rgba(0, 0, 0, 0.1);
-  font-family: "Yellowtail", cursive;
+background-color: #a6768c;
+font-family: 'Farsan', cursive;
+font-size:150px;
+/* text-align: center;
+align-content: center; */
+background-color: transparent;
 }
-.rphotographyheadingthree {
-  font-size: 100px;
-  font-family: "Redressed", cursive;
+button {
+  outline-style: none;
+  font-size: 40px;
+  color: #cebbb2;
+  padding:0px;
+  margin:0px;
+  background-color: transparent;
+  position: sticky;
+  float: right;
+  right:0px;
+  border-style: none;
+  width: 50px;
+  height: 50px;
 }
-.menubar {
-  color: #7f58a6;
-  position: fixed;
-  top: 8px;
-  left: 32px;
+
+.mainphotos {
+  height: 100vh;
+  background-color:#bfb188 ;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.couplephoto {
+position: relative;
+top:5%;
+left:35%;
+  width:36%;
+  height: 90%;
+  z-index: 1;
+
+}
+.bridephoto {
+  position: absolute;
+  top:5%;
+  left:35%;
+    width:36%;
+    height: 90%;
+}
+.groomphoto{
+  position: absolute;
+  top:5%;
+  left:35%;
+    width:36%;
+    height: 90%;
+}
+
+#callone {
+
+  border: yellow solid 12px;
+}
+
+#calltwo {
+
+  transform: translateY(50px);
 }
