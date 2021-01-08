@@ -1,20 +1,22 @@
-import "./navbar.css";
-import { Link } from "react-router-dom";
-import {
-  faHome,
-  faCameraRetro,
-  faLocationArrow,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faInstagram,
-  faProductHunt,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// import { Link , BrowserRouter as Router } from "react-router-dom";
+// import {
+//   faHome,
+//   faCameraRetro,
+//   faLocationArrow,
+// } from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faInstagram,
+//   faProductHunt,
+//   faLinkedin,
+// } from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Header() {
   return (
     <>
-      <header>
+    <h1>hello world</h1>
+      {/* <header>
+        <Router>
         <div className="navbardiv">
           <ul className="navbar">
             <li>
@@ -86,7 +88,8 @@ function Header() {
             </li>
           </ul>
         </div>
-      </header>
+      </Router>
+      </header> */}
     </>
   );
 }
