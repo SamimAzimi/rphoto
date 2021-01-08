@@ -35,7 +35,7 @@ button {
   padding:0px;
   margin:0px;
   background-color: transparent;
-  position: sticky;
+  position: fixed;
   float: right;
   right:0px;
   border-style: none;

@@ -38,7 +38,12 @@ const handlescroll=()=>{
         <FontAwesomeIcon icon={faBars}/>
       </button>
       <div id="mainPhoto" className="mainphotos" >
-      <Controller  vertical="false" >
+
+
+
+
+
+      <Controller >
         <Scene duration={100}
          indicators="true"
           triggerHook="onLeave"
@@ -50,9 +55,9 @@ const handlescroll=()=>{
       <img src={couple} alt="pictureone" />
       </div> }>
       <Tween 
-from={{Y:"0"}}
-to={{y:"90",
-delay:"0.4",ease: "easeOut"}} >
+        from={{Y:"0"}}
+        to={{y:"90",
+        delay:"0.4",ease: "easeOut",transform:"scale(0.8)"}} >
 
 </Tween>
          </Timeline>
@@ -80,7 +85,7 @@ target={
 <Tween 
 
     to={{x:'70%', top:"30%",visibility:"visible",
-    delay:"0.4",ease: "easeOut"}} >
+    delay:"0.4",ease: "easeOut",transform:"scale(0.8)"}} >
 
 </Tween>
 </Timeline>
@@ -94,7 +99,6 @@ target={
           triggerElement="#mainPhoto"
           classToggle="bridephotoanimation"
           >
-
 <Timeline 
 target={
   <div className="groomphoto" >
@@ -104,7 +108,7 @@ target={
 <Tween 
 
     to={{x:'-70%', top:"30%",visibility:"visible",
-    delay:"0.4",ease: "easeOut"}} >
+    delay:"0.4",ease: "easeOut",transform:"scale(0.8)"}} >
 
 </Tween>
 </Timeline>
