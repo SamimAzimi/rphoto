@@ -1,23 +1,25 @@
 
-import "../App.css"
+import "./home.css"
 import { Tween, Timeline } from 'react-gsap';
 import { Controller, Scene } from 'react-scrollmagic';
-import { useState, useEffect } from "react";
-import Heading from './heading'
+// import { useState, useEffect } from "react";
 import couple from '../images/couple.jpeg'
 import groom from '../images/groom.jpeg'
 import bride from '../images/bride.jpeg'
+import Secondhome from './secondhome'
 function Home() {
-  const [offsetY, setOffsetY] = useState(0)
-  const handlescroll=()=>{
-  setOffsetY(window.pageYOffset)
-  console.log(offsetY)
-}
-  useEffect(()=>{
-    window.addEventListener("scroll",handlescroll)
-    console.log(offsetY)
-    return ()=> window.removeEventListener("scroll",handlescroll)
-  })
+//   const [offsetY, setOffsetY] = useState(0)
+//   const handlescroll=()=>{
+//   setOffsetY(window.pageYOffset)
+//   console.log(offsetY)
+// }
+//   useEffect(()=>{
+//     window.addEventListener("scroll",handlescroll)
+//     console.log(offsetY)
+//     return ()=> window.removeEventListener("scroll",handlescroll)
+//   })
+
+//   // style={{position: "fixed",right: `${setOffsetY}px`,}}
   return (
     <>
       <Controller>
@@ -31,8 +33,7 @@ function Home() {
           >
             {/* main photo and company name */}
      <div id="mainPhoto" className="mainphotos" >
-      <h1 className="rphotographyheadingone" style={{position: "fixed",right: `${setOffsetY}px`,
-      }}>R Photography</h1>
+      <h1 className="rphotographyheadingone">R Photography</h1>
 
 
 
@@ -95,7 +96,7 @@ target={
 <Timeline 
 
 target={
-  <div className="groomphoto" >
+  <div id="groomphoto" className="groomphoto" >
   <img src={groom} alt="pictureone" />
   </div>
 } > 
@@ -113,7 +114,7 @@ target={
 
   </Scene>
     </Controller> 
-    <Heading />
+  <Secondhome />
     </>
   );
 }
