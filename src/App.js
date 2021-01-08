@@ -37,8 +37,19 @@ const handlescroll=()=>{
       >
         <FontAwesomeIcon icon={faBars}/>
       </button>
+      <Controller>
+      <Scene duration={100}
+         indicators="true"
+          triggerHook="onLeave"
+          pin="true"
+          reverse="true" 
+          triggerElement="#mainPhoto"
+          >
+
+            <Timeline target={
       <div id="mainPhoto" className="mainphotos" >
 
+    
 
 
 
@@ -114,7 +125,11 @@ target={
 </Timeline>
 </Scene>
 </Controller>
-    </div>
+    </div> }>
+      
+    </Timeline>
+  </Scene>
+    </Controller>
       <h1 className="rphotographyheadingone"
       style={{
         position: "absolute",
