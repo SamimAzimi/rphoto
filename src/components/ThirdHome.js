@@ -67,7 +67,7 @@ const ThirdHome = () => (
               <Timeline 
                 target={
                   <div className="heading">
-                    <h2>Wedding Photography</h2>
+                    <h2>Engagment Photography</h2>
                   </div>
                 }
               >
