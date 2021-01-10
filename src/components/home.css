@@ -63,6 +63,7 @@
   padding-left: 40%;
   justify-self: right;
   align-self: center;
+  border-radius: 50% 50%;
 }
 .firstgroomphoto {
   /* border: 1px solid red; */
