@@ -38,7 +38,7 @@ function Home() {
       <Controller>
         <Scene
           spacerClass="scrollmagic"
-          duration={700}
+          duration={1200}
           indicators="true"
           triggerHook="onLeave"
           pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
@@ -47,7 +47,7 @@ function Home() {
         >
           <div className="firstpagecontainer">
             <div className="firstpagetitle">
-              <h1> R Photo Graphy</h1>
+              <h1 className="titleitself"> R Photo Graphy</h1>
             </div>
 
             <div
