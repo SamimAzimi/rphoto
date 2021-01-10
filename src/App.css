@@ -1,24 +1,21 @@
-button {
-  outline-style: none;
-  font-size: 40px;
-  color: #cebbb2;
-  padding:0px;
-  margin:0px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menubar {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  text-align: right;
+  align-items: right;
+  border: 2px solid red;
+  font-size: 50px;
+  background-color: #bfb188;
+}
+.icons {
+  margin-right: 3%;
   background-color: transparent;
-  position: fixed;
-  float: right;
-  right:0px;
   border-style: none;
-  width: 50px;
-  height: 50px;
-  z-index: 1;
-  
 }
-button:hover {
-  outline-style: none;
-  font-size: 40px;
-  color: #cebbb2;
-  transform: rotate(360deg);
-
-}
-

@@ -1,35 +1,82 @@
 import "./home.css";
-import { Tween, Timeline } from "react-gsap";
 import { Controller, Scene } from "react-scrollmagic";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import couple from "../images/couple.jpeg";
 import groom from "../images/groom.jpeg";
 import bride from "../images/bride.jpeg";
-import Secondhome from "./secondhome";
+import Aos from "aos";
+import "aos/dist/aos.css";
 function Home() {
-  const [offsetY, setOffsetY] = useState(0);
-  const [MsetX, setMsetX] = useState(0);
-  // const [MsetY, setMsetY] = useState(0);
-  const handlescroll = () => {
-    setOffsetY(window.pageYOffset);
-  };
-  const handlemousemove = (e) => {
-    // setMsetX(window.innerWidth / 2 - e.screenX);
-    // setMsetY(window.innerWidth / 2 - e.screenY);
-  };
+  // const [offsetY, setOffsetY] = useState(0);
+  // const [MsetX, setMsetX] = useState(0);
+  // // const [MsetY, setMsetY] = useState(0);
+  // const handlescroll = () => {
+  //   setOffsetY(window.pageYOffset);
+  // };
+  // const handlemousemove = (e) => {
+  //   // setMsetX(window.innerWidth / 2 - e.screenX);
+  //   // setMsetY(window.innerWidth / 2 - e.screenY);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handlescroll);
+  //   window.addEventListener("mousemove", handlemousemove);
+  //   return () => {
+  //     window.removeEventListener("scroll", handlescroll);
+  //     window.removeEventListener("mousemove", handlemousemove);
+  //   };
+  // });
 
   useEffect(() => {
-    window.addEventListener("scroll", handlescroll);
-    window.addEventListener("mousemove", handlemousemove);
-    return () => {
-      window.removeEventListener("scroll", handlescroll);
-      window.removeEventListener("mousemove", handlemousemove);
-    };
-  });
-  //   // style={{position: "fixed",right: `${setOffsetY}px`,}}
+    Aos.init({
+      duration: 1500,
+      easing: "ease-in-sine",
+    });
+  }, []);
   return (
     <>
       <Controller>
+        <Scene
+          spacerClass="scrollmagic"
+          duration={700}
+          indicators="true"
+          triggerHook="onLeave"
+          pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
+          reverse={true}
+          triggerElement="#menubarid"
+        >
+          <div className="firstpagecontainer">
+            <div className="firstpagetitle">
+              <h1> R Photo Graphy</h1>
+            </div>
+
+            <div
+              data-aos="fade-left"
+              data-aos-anchor-placement="bottom-top"
+              className="firstbridephoto"
+            >
+              <img src={bride} alt="bride" />
+            </div>
+            <div
+              data-aos="zoom-out"
+              data-aos-anchor-placement="bottom-top"
+              className="firstmainphoto"
+            >
+              <img src={couple} alt="couple" />
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-anchor-placement="bottom-top"
+              className="firstgroomphoto"
+            >
+              <img src={groom} alt="groom" />
+            </div>
+          </div>
+        </Scene>
+      </Controller>
+    </>
+
+    /* <Controller>
         <Scene
           duration={1000}
           indicators="true"
@@ -130,8 +177,7 @@ function Home() {
           </div>
         </Scene>
       </Controller>
-      <Secondhome />
-    </>
+      <Secondhome /> */
   );
 }
 
