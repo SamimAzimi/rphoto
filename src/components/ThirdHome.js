@@ -13,10 +13,33 @@ const ThirdHome = () => (
         pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
       >
         <div className="ThirdPageContainer">
-          <div className="imageone">image</div>
-          <div className="imageone">image</div>
-          <div className="imageone">image</div>
-          <div className="imageone">image</div>
+          <div className="leftsideanimation">
+            <div>
+              <img src="" alt="leftsidebaranimation"></img>
+            </div>
+            <div>
+              <img src="" alt="leftsidebaranimation"></img>
+            </div>
+            <div>
+              <img src="" alt="leftsidebaranimation"></img>
+            </div>
+          </div>
+          <div className="centersideanimation">
+            <div>
+              <img src="" alt="centerimage"></img>
+            </div>
+          </div>
+          <div className="rightsideanimation">
+            <div>
+              <img src="" alt="rightidebaranimation"></img>
+            </div>
+            <div>
+              <img src="" alt="rightsidebaranimation"></img>
+            </div>
+            <div>
+              <img src="" alt="rightsidebaranimation"></img>
+            </div>
+          </div>
         </div>
       </Scene>
     </Controller>
