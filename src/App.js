@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+      <div className="pin" id="pin"></div>
       <div className="menubar" id="menubarid">
         <div className="icons">
           <FontAwesomeIcon

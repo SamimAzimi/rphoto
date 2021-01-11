@@ -7,15 +7,13 @@
 .menubar {
   display: flex;
   flex-direction: column;
-  justify-content: right;
-  text-align: right;
-  align-items: right;
-  border: 2px solid red;
+  position: fixed;
+  right: 3%;
+  top: 5%;
   font-size: 50px;
-  background-color: #bfb188;
+  z-index: 99;
 }
 .icons {
-  margin-right: 3%;
   background-color: transparent;
   border-style: none;
 }

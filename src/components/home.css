@@ -22,9 +22,9 @@
 }
 
 .firstpagecontainer {
-  /* border: 1px solid red; */
   height: 100vh;
   width: 100vw;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 0.1fr 2.5fr;
@@ -39,34 +39,24 @@
 .firstpagetitle {
   z-index: 9;
   color: #7f58a6;
-  width: 50%;
-  /* border: 1px solid red; */
+  width: 100%;
   justify-self: center;
   grid-column: 1/-1;
   text-align: center;
-  /* stroke-width: 3px;
-  stroke-linecap: butt;
-  stroke: red; */
-
   transform: translate(0px, 400px);
 }
 .titleitself {
-  font-size: 50px;
   font-family: "Sacramento", cursive;
 }
 .firstmainphoto {
-  /* border: 1px solid red; */
   align-self: center;
 }
 .firstbridephoto {
-  /* border: 1px solid red; */
   padding-left: 40%;
   justify-self: right;
   align-self: center;
-  border-radius: 50% 50%;
 }
 .firstgroomphoto {
-  /* border: 1px solid red; */
   padding-right: 40%;
   justify-self: left;
   align-self: center;
