@@ -1,7 +1,7 @@
 import React from "react";
 import "./thirdhome.css";
 import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
+// import { Tween, Timeline } from "react-gsap";
 
 const ThirdHome = () => (
   <>
