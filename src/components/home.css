@@ -34,6 +34,7 @@
     "title title title"
     "image-three iamge-one image-two";
   background-color: #bfb188;
+  z-index: -2;
 }
 
 .firstpagetitle {
@@ -60,7 +61,7 @@
   padding-right: 40%;
   justify-self: left;
   align-self: center;
-  z-index: 3;
+  z-index: -1;
 }
 
 img {

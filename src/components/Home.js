@@ -1,55 +1,73 @@
 import "./home.css";
-import { Controller, Scene } from "react-scrollmagic";
-import { useEffect } from "react";
+
 import SecondPage from "./secondhome";
 import ThirdPage from "./ThirdHome";
 import couple from "../images/couple.jpeg";
 import groom from "../images/groom.jpeg";
 import bride from "../images/bride.jpeg";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import { Controller, Scene } from "react-scrollmagic";
+import { Tween, Timeline } from "react-gsap";
+import { EasePack } from "gsap/all";
 function Home() {
-  useEffect(() => {
-    Aos.init({
-      duration: 1500,
-      easing: "ease-in-sine",
-    });
-  }, []);
   return (
     <>
       <Controller>
         <Scene
           spacerClass="scrollmagic"
-          duration={1000}
+          duration={1300}
           indicators="true"
           triggerHook="onLeave"
           pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
           reverse={true}
           triggerElement="#pin"
         >
-          <div className="firstpagecontainer">
-            <div className="firstpagetitle">
-              <h1 className="titleitself"> R Photo Graphy</h1>
+          {(progress) => (
+            <div className="firstpagecontainer">
+              <div className="firstpagetitle">
+                <h1 className="titleitself"> R Photo Graphy</h1>
+              </div>
+              <Timeline totalProgress={progress} paused>
+                <Tween
+                  from={{ x: "100%", opacity: "0" }}
+                  to={{
+                    x: "20%",
+                    opacity: "1",
+                    transform: "ease.in",
+                    delay: "5",
+                    duration: "8",
+                    ease: EasePack,
+                  }}
+                >
+                  <div className="firstbridephoto">
+                    <img src={bride} alt="bride" />
+                  </div>
+                </Tween>
+              </Timeline>
+              <Timeline totalProgress={progress} paused>
+                <Tween from={{}} to={{ scale: "0.7" }}>
+                  <div className="firstmainphoto">
+                    <img src={couple} alt="couple" />
+                  </div>
+                </Tween>
+              </Timeline>
+              <Timeline totalProgress={progress} paused>
+                <Tween
+                  from={{ x: "-100%", opacity: "0" }}
+                  to={{
+                    x: "-16%",
+                    opacity: "1",
+                    delay: "5",
+                    duration: "8",
+                    ease: EasePack,
+                  }}
+                >
+                  <div className="firstgroomphoto">
+                    <img src={groom} alt="groom" />
+                  </div>
+                </Tween>
+              </Timeline>
             </div>
-
-            <div
-              data-aos="fade-left"
-              data-aos-anchor-placement="bottom-top"
-              className="firstbridephoto"
-            >
-              <img src={bride} alt="bride" />
-            </div>
-            <div data-aos="zoom-out" className="firstmainphoto">
-              <img src={couple} alt="couple" />
-            </div>
-            <div
-              data-aos="fade-right"
-              data-aos-anchor-placement="bottom-top"
-              className="firstgroomphoto"
-            >
-              <img src={groom} alt="groom" />
-            </div>
-          </div>
+          )}
         </Scene>
       </Controller>
       <SecondPage />
