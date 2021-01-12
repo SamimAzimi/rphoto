@@ -28,35 +28,40 @@
 .lefttopimage {
   grid-area: lefttopimage;
   width: 30%;
-  height: 30%;
-}
-
-.righttopimage {
-  grid-area: righttopimage;
-  width: 30%;
-  height: 30%;
+  height: 100%;
+  position: relative;
+  left: 70%;
 }
 .leftcenterimage {
-  grid-area: leftcenterimage;
-  width: 20%;
-  height: 20%;
-}
-.rightcenterimage {
-  grid-area: rightcenterimage;
-  width: 20%;
-  height: 20%;
+  width: 30%;
+  height: 100%;
+  position: relative;
+  left: 70%;
 }
 .leftbotoomimage {
   grid-area: leftbotoomimage;
-  display: flex;
-  justify-content: right;
-  width: 20%;
-  height: 20%;
+
+  width: 30%;
+  height: 58%;
+  position: absolute;
+  right: 0;
 }
+.righttopimage {
+  grid-area: righttopimage;
+  width: 30%;
+  height: 100%;
+}
+
+.rightcenterimage {
+  grid-area: rightcenterimage;
+  width: 30%;
+  height: 100%;
+}
+
 .rightbottomimage {
   grid-area: rightbottomimage;
-  width: 20%;
-  height: 20%;
+  width: 30%;
+  height: 58%;
 }
 .thirdpagecenterimage {
   display: flex;
@@ -71,4 +76,29 @@
 }
 img {
   display: block;
+}
+
+.lefttopimage > img {
+  width: 100%;
+  height: 100;
+}
+.leftcenterimage > img {
+  width: 100%;
+  height: 100%;
+}
+.leftbotoomimage > img {
+  width: 100%;
+  height: 100%;
+}
+.righttopimage > img {
+  height: 100%;
+  width: 100%;
+}
+.rightcenterimage > img {
+  height: 100%;
+  width: 100%;
+}
+.rightbottomimage > img {
+  height: 100%;
+  width: 100%;
 }

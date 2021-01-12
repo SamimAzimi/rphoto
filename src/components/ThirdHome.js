@@ -80,7 +80,7 @@ const ThirdHome = () => (
                   to={{ y: "1%", opacity: "1" }}
                 >
                   <div className="rightcenterimage">
-                    <img src={RightCenter} alt="rightsidebaranimation"></img>
+                    <img src={RightDown} alt="rightsidebaranimation"></img>
                   </div>
                 </Tween>
               </Timeline>
@@ -90,7 +90,7 @@ const ThirdHome = () => (
                   to={{ y: "1%", opacity: "1" }}
                 >
                   <div className="rightbottomimage">
-                    <img src={RightDown} alt="rightsidebaranimation"></img>
+                    <img src={RightCenter} alt="rightsidebaranimation"></img>
                   </div>
                 </Tween>
               </Timeline>
