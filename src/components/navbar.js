@@ -1,93 +1,93 @@
-import { Link, BrowserRouter as Router } from "react-router-dom";
+// import { Link, BrowserRouter as Router } from "react-router-dom";
+import "./navbar.css";
 import {
   faHome,
   faCameraRetro,
   faLocationArrow,
+  faSearch,
+  faImages,
+  faPersonBooth,
+  faTools,
+  faHeart,
+  faShare,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faInstagram,
-  faProductHunt,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faProductHunt } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Header() {
   return (
     <>
-      <header>
-        <Router>
-          <div className="navbardiv">
-            <ul className="navbar">
-              <li>
-                <Link to="/">
-                  <h2>
-                    <FontAwesomeIcon
-                      icon={faHome}
-                      style={{ color: "#65586e" }}
-                    ></FontAwesomeIcon>{" "}
-                    Home
-                  </h2>
-                </Link>
-              </li>
-              <li>
-                <Link to="/gallary">
-                  <h2>
-                    <FontAwesomeIcon
-                      icon={faCameraRetro}
-                      style={{ color: "#65586e" }}
-                    />{" "}
-                    Storybook
-                  </h2>
-                </Link>
-              </li>
-              <li>
-                <Link to="/couplegallary">
-                  <h2>
-                    <FontAwesomeIcon
-                      icon={faInstagram}
-                      style={{ color: "#65586e" }}
-                    />{" "}
-                    Couple Gallary (your Gallary)
-                  </h2>
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact">
-                  <h2>
-                    {" "}
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      className="iconstyles"
-                    />{" "}
-                    Contact Us
-                  </h2>
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  <h2>
-                    <FontAwesomeIcon
-                      icon={faLocationArrow}
-                      style={{ color: "#65586e" }}
-                    />
-                    About Us
-                  </h2>
-                </Link>
-              </li>
-              <li>
-                <Link to="/package">
-                  <h2>
-                    <FontAwesomeIcon
-                      icon={faProductHunt}
-                      style={{ color: "#65586e" }}
-                    />
-                    Packages
-                  </h2>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </Router>
-      </header>
+      <div className="beehive">
+        <div className="beehive3">
+          <h2>
+            <FontAwesomeIcon icon={faHome} style={{ color: "white" }} />
+          </h2>
+          <p>Home</p>
+        </div>
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon icon={faCameraRetro} style={{ color: "white" }} />
+          </h2>
+          <p>Wedding Gallary</p>
+        </div>
+        <div className="beehive2">
+          <h2>
+            <FontAwesomeIcon icon={faSearch} style={{ color: "white" }} />
+          </h2>
+          <p>Engagement Gallary</p>
+        </div>
+
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon icon={faImages} style={{ color: "white" }} />
+          </h2>
+          <p>Storybook</p>
+        </div>
+        <div className="beehive3">
+          <h2>
+            <FontAwesomeIcon icon={faPersonBooth} style={{ color: "white" }} />
+          </h2>
+          <p>Couple Login Page</p>
+        </div>
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon icon={faProductHunt} style={{ color: "white" }} />
+          </h2>
+          <p>Packages</p>
+        </div>
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon
+              icon={faLocationArrow}
+              style={{ color: "white" }}
+            />
+          </h2>
+          <p>About Us</p>
+        </div>
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon icon={faTools} style={{ color: "white" }} />
+          </h2>
+          <p>Photographer Admin Panel</p>
+        </div>
+        <div className="beehive3">
+          <h2>
+            <FontAwesomeIcon icon={faHeart} style={{ color: "white" }} />
+          </h2>
+          <p>Couple Registeration</p>
+        </div>
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon icon={faTwitter} style={{ color: "white" }} />
+          </h2>
+          <p>Social Media page</p>
+        </div>
+        <div className="beehive1">
+          <h2>
+            <FontAwesomeIcon icon={faShare} style={{ color: "white" }} />
+          </h2>
+          <p>Share</p>
+        </div>
+      </div>
     </>
   );
 }

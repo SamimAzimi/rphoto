@@ -2,8 +2,8 @@ import "./App.css";
 // import { motion } from "framer-motion";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Home from "./components/Home";
-// import Navbar from "./components/navbar";
+// import Home from "./components/Home";
+import Navbar from "./components/navbar";
 import React from "react";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -26,7 +26,7 @@ function App() {
           />
         </div>
       </div>
-      <Home />
+      <Navbar />
       {/* {isActive ? <Home /> : <Navbar />} */}
     </>
   );
