@@ -35,25 +35,19 @@ function App() {
         </Link>
       </div>
       <Authprovider>
-        <Switch>
-          <Route exact path="/" render={() => <Langingpage />} />
-          <Route exact path="/navbar" render={() => <Navbar />} />
-          <Route
-            exact
-            path="/coupleloginpage"
-            render={() => <CoupleloginPage />}
-          />
-          <PrivateRoute
-            exact
-            path="/adminpanel"
-            render={() => <Adminpanel />}
-          />
-          <PrivateRoute
-            exact
-            path="/couplegallary"
-            render={() => <Couplegallary />}
-          />
-        </Switch>
+        <Route exact path="/" render={() => <Langingpage />} />
+        <Route exact path="/navbar" render={() => <Navbar />} />
+        <Route
+          exact
+          path="/coupleloginpage"
+          render={() => <CoupleloginPage />}
+        />
+        <PrivateRoute exact path="/adminpanel" render={() => <Adminpanel />} />
+        <PrivateRoute
+          exact
+          path="/couplegallary"
+          render={() => <Couplegallary />}
+        />
       </Authprovider>
     </>
   );

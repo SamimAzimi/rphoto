@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { Authcontext } from "./Authprovider";
+
 // import Slider from "react-animated-slider";
-import "react-animated-slider/build/horizontal.css";
+// import "react-animated-slider/build/horizontal.css";
 // import Couple from "../images/gardenCouple.jpeg";
 
 function CoupleGallary() {
-  const { currentUser } = useContext(Authcontext);
   // const slides = [
   //   {
   //     title: "Couple Aisle HD",

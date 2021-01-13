@@ -6,34 +6,31 @@ import {
   faSignInAlt,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { Authcontext } from "./Authprovider";
-import React, { useState, useContext, useCallback } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+// import { Authcontext } from "./Authprovider";
+import React, { useState, useCallback } from "react";
+import { withRouter } from "react-router";
 import { firebaseauth } from "../firebase.config";
 
 function CoupleloginPage({ history }) {
   const [show, setShow] = useState(false);
-  const handleloginsubmit = useCallback(
-    async (event) => {
-      event.preventDefault();
-      const { email, password, confirm } = event.target.elements;
-      try {
-        if (confirm.value === password.value) {
-          firebaseauth.signInWithEmailAndPassword(email.value, password.value);
-          history.push("/couplegallary");
-          console.log(email.value, password.value);
-        } else alert("password doesnt match but you found your life match");
-      } catch (err) {
-        alert(err);
-      }
-    },
-    [history]
-  );
-  const { currentUser } = useContext(Authcontext);
-  if (currentUser) {
-    console.log(currentUser);
-    return <Redirect to="/couplegallary" />;
-  }
+  const handleloginsubmit = useCallback(async (event) => {
+    event.preventDefault();
+    const { email, password, confirm } = event.target.elements;
+    try {
+      if (confirm.value === password.value) {
+        firebaseauth.signInWithEmailAndPassword(email.value, password.value);
+        // history.push("/couplegallary");
+        console.log(email.value, password.value);
+      } else alert("password doesnt match but you found your life match");
+    } catch (err) {
+      alert(err);
+    }
+  }, []);
+  // const { currentUser } = useContext(Authcontext);
+  // if (currentUser) {
+  //   console.log(currentUser);
+  //   return <Redirect to="/couplegallary" />;
+  // }
   return (
     <>
       <div className="clogincontainer">
@@ -57,7 +54,7 @@ function CoupleloginPage({ history }) {
           </div>
           {show && (
             <form className="phonedisplay">
-              <lable htmlFor="Phone Number">Phone Number</lable>
+              <lable htmlFor="PhoneNumber">Phone Number</lable>
               <input name="phonenumberlogin" type="text" />
               <button type="submit" className="socialmediabutton">
                 <FontAwesomeIcon icon={faSignInAlt} /> Login
