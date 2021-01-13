@@ -43,3 +43,6 @@ p {
 .beehive > div:nth-of-type(11) {
   grid-column: 2/-1;
 }
+a {
+  text-decoration: none;
+}

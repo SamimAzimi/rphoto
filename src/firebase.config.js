@@ -1,8 +1,9 @@
 import firebase from "firebase/app";
 import "firebase/storage";
 import "firebase/firestore";
+import "firebase/auth";
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyDigf9zE3uAfXpUGzRdqH8S3NuwsRltItM",
   authDomain: "rphoto-2d5ee.firebaseapp.com",
   projectId: "rphoto-2d5ee",
@@ -14,8 +15,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
 const ProjectStorage = firebase.storage();
 const ProjectFirestore = firebase.firestore();
+const firebaseauth = firebase.auth();
 const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
-export { ProjectStorage, ProjectFirestore, timeStamp };
+export { ProjectStorage, ProjectFirestore, timeStamp, firebaseauth };

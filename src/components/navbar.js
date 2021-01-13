@@ -1,4 +1,4 @@
-// import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 import {
   faHome,
@@ -18,9 +18,11 @@ function Header() {
     <>
       <div className="beehive">
         <div className="beehive3">
-          <h2>
-            <FontAwesomeIcon icon={faHome} style={{ color: "white" }} />
-          </h2>
+          <Link to="/">
+            <h2>
+              <FontAwesomeIcon icon={faHome} style={{ color: "white" }} />
+            </h2>
+          </Link>
           <p>Home</p>
         </div>
         <div className="beehive1">
@@ -43,10 +45,15 @@ function Header() {
           <p>Storybook</p>
         </div>
         <div className="beehive3">
-          <h2>
-            <FontAwesomeIcon icon={faPersonBooth} style={{ color: "white" }} />
-          </h2>
-          <p>Couple Login Page</p>
+          <Link to="coupleloginpage">
+            <h2>
+              <FontAwesomeIcon
+                icon={faPersonBooth}
+                style={{ color: "white" }}
+              />
+            </h2>
+            <p>Couple Login Page</p>
+          </Link>
         </div>
         <div className="beehive1">
           <h2>
@@ -64,16 +71,20 @@ function Header() {
           <p>About Us</p>
         </div>
         <div className="beehive1">
-          <h2>
-            <FontAwesomeIcon icon={faTools} style={{ color: "white" }} />
-          </h2>
-          <p>Photographer Admin Panel</p>
+          <Link to="adminpanel">
+            <h2>
+              <FontAwesomeIcon icon={faTools} style={{ color: "white" }} />
+            </h2>
+            <p>Photographer Admin Panel</p>
+          </Link>
         </div>
         <div className="beehive3">
-          <h2>
-            <FontAwesomeIcon icon={faHeart} style={{ color: "white" }} />
-          </h2>
-          <p>Couple Registeration</p>
+          <Link to="/couplegallary">
+            <h2>
+              <FontAwesomeIcon icon={faHeart} style={{ color: "white" }} />
+            </h2>
+            <p>Couple Gallary</p>
+          </Link>
         </div>
         <div className="beehive1">
           <h2>

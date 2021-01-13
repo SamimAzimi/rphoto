@@ -1,9 +1,12 @@
+import React, { useContext } from "react";
+import { Authcontext } from "./Authprovider";
 // import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 // import Couple from "../images/gardenCouple.jpeg";
 
 function CoupleGallary() {
-   // const slides = [
+  const { currentUser } = useContext(Authcontext);
+  // const slides = [
   //   {
   //     title: "Couple Aisle HD",
   //     description: "Scared Moment Capture",
@@ -21,8 +24,8 @@ function CoupleGallary() {
   //   },
   // ];
 
-    return (
-      <>
+  return (
+    <>
       <h1>nothing special going on here</h1>
       {/* <main>
         <Slider autoplay="600">
@@ -36,8 +39,7 @@ function CoupleGallary() {
         </Slider>
       </main> */}
     </>
-    )
-  }
-  
-  export default CoupleGallary;
-  
+  );
+}
+
+export default CoupleGallary;

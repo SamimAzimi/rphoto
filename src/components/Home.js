@@ -1,7 +1,4 @@
 import "./home.css";
-
-import SecondPage from "./secondhome";
-import ThirdPage from "./ThirdHome";
 import couple from "../images/couple.jpeg";
 import groom from "../images/groom.jpeg";
 import bride from "../images/bride.jpeg";
@@ -20,6 +17,7 @@ function Home() {
           pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
           reverse={true}
           triggerElement="#pin"
+          loglevel={3}
         >
           {(progress) => (
             <div className="firstpagecontainer">
@@ -70,8 +68,6 @@ function Home() {
           )}
         </Scene>
       </Controller>
-      <SecondPage />
-      <ThirdPage />
     </>
   );
 }
