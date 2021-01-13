@@ -6,7 +6,7 @@ import Navbar from "./components/navbar";
 import Langingpage from "./components/Landingpage";
 import CoupleloginPage from "./components/CoupleloginPage";
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Route, Link, useHistory } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import { Authprovider } from "./components/Authprovider";
 import Couplegallary from "./components/CoupleGallary";
@@ -18,7 +18,7 @@ function App() {
   // const toggleMenu = () => {
   //   history.pushState("newdaa", "Navbar", "/navbar");
   // };
-
+  const history = useHistory();
   return (
     <>
       <div className="pin" id="pin"></div>
@@ -40,7 +40,7 @@ function App() {
         <Route
           exact
           path="/coupleloginpage"
-          render={() => <CoupleloginPage />}
+          render={() => <CoupleloginPage history={history} />}
         />
         <PrivateRoute exact path="/adminpanel" render={() => <Adminpanel />} />
         <PrivateRoute

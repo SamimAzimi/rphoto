@@ -6,31 +6,36 @@ import {
   faSignInAlt,
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
-// import { Authcontext } from "./Authprovider";
-import React, { useState, useCallback } from "react";
+import React, { useState, useContext, useCallback } from "react";
 import { withRouter } from "react-router";
 import { firebaseauth } from "../firebase.config";
+import { Authcontext } from "./Authprovider";
+// import { Authcontext } from "./Authprovider";
+// import { BrowserRouter } from "react-router-dom";
 
 function CoupleloginPage({ history }) {
   const [show, setShow] = useState(false);
-  const handleloginsubmit = useCallback(async (event) => {
-    event.preventDefault();
-    const { email, password, confirm } = event.target.elements;
-    try {
-      if (confirm.value === password.value) {
-        firebaseauth.signInWithEmailAndPassword(email.value, password.value);
-        // history.push("/couplegallary");
-        console.log(email.value, password.value);
-      } else alert("password doesnt match but you found your life match");
-    } catch (err) {
-      alert(err);
-    }
-  }, []);
-  // const { currentUser } = useContext(Authcontext);
-  // if (currentUser) {
-  //   console.log(currentUser);
-  //   return <Redirect to="/couplegallary" />;
-  // }
+  const handleloginsubmit = useCallback(
+    async (event) => {
+      event.preventDefault();
+      const { email, password, confirm } = event.target.elements;
+      try {
+        if (confirm.value === password.value) {
+          firebaseauth.signInWithEmailAndPassword(email.value, password.value);
+          history.push("/couplegallary");
+
+          console.log(email.value, password.value);
+        } else alert("password doesnt match but you found your life match");
+      } catch (err) {
+        alert(err);
+      }
+    },
+    [history]
+  );
+  const { currentUser } = useContext(Authcontext);
+  if (currentUser) {
+    console.log(currentUser);
+  }
   return (
     <>
       <div className="clogincontainer">
