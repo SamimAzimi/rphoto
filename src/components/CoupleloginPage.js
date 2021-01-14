@@ -7,14 +7,13 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useContext, useCallback } from "react";
-import { withRouter } from "react-router";
+import { withRouter, Redirect } from "react-router";
 import { firebaseauth } from "../firebase.config";
 import { Authcontext } from "./Authprovider";
-// import { Authcontext } from "./Authprovider";
-// import { BrowserRouter } from "react-router-dom";
 
 function CoupleloginPage({ history }) {
   const [show, setShow] = useState(false);
+
   const handleloginsubmit = useCallback(
     async (event) => {
       event.preventDefault();
@@ -23,8 +22,6 @@ function CoupleloginPage({ history }) {
         if (confirm.value === password.value) {
           firebaseauth.signInWithEmailAndPassword(email.value, password.value);
           history.push("/couplegallary");
-
-          console.log(email.value, password.value);
         } else alert("password doesnt match but you found your life match");
       } catch (err) {
         alert(err);
@@ -35,17 +32,19 @@ function CoupleloginPage({ history }) {
   const { currentUser } = useContext(Authcontext);
   if (currentUser) {
     console.log(currentUser);
+    return <Redirect to="/couplegallary" />;
   }
   return (
     <>
       <div className="clogincontainer">
         <div className="glassmorph">
           <div className="socialmediaButtons">
-            {/* <div className="facebook">
+            {/* 
               <FontAwesomeIcon icon={faFacebook} />
-            </div>
+              <FontAwesomeIcon className="twitter" icon={faTwitter} />
+            
             <FontAwesomeIcon className="google" icon={faGoogle} />
-            <FontAwesomeIcon className="twitter" icon={faTwitter} /> */}
+             */}
             <FontAwesomeIcon
               className="phone"
               onClick={() => setShow(true)}

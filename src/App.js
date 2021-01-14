@@ -8,7 +8,6 @@ import CoupleloginPage from "./components/CoupleloginPage";
 import React from "react";
 import { Route, Link, useHistory } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
-import { Authprovider } from "./components/Authprovider";
 import Couplegallary from "./components/CoupleGallary";
 import Adminpanel from "./components/AdminPanel";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -34,21 +33,12 @@ function App() {
           </div>
         </Link>
       </div>
-      <Authprovider>
-        <Route exact path="/" render={() => <Langingpage />} />
-        <Route exact path="/navbar" render={() => <Navbar />} />
-        <Route
-          exact
-          path="/coupleloginpage"
-          render={() => <CoupleloginPage history={history} />}
-        />
-        <PrivateRoute exact path="/adminpanel" render={() => <Adminpanel />} />
-        <PrivateRoute
-          exact
-          path="/couplegallary"
-          render={() => <Couplegallary />}
-        />
-      </Authprovider>
+
+      <Route exact path="/" component={Langingpage} />
+      <Route exact path="/navbar" component={Navbar} />
+      <Route exact path="/coupleloginpage" component={CoupleloginPage} />
+      <PrivateRoute exact path="/adminpanel" component={Adminpanel} />
+      <PrivateRoute exact path="/couplegallary" component={Couplegallary} />
     </>
   );
 }
