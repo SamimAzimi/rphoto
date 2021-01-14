@@ -18,7 +18,7 @@ function App() {
   const history = useHistory();
   const toggleMenu = () => {
     history.push("/navbar");
-    window.location.reload();
+    
   };
   return (
     <>
