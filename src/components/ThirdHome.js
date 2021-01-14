@@ -9,6 +9,7 @@ import RightUp from "../images/brideboqute.jpeg";
 import RightDown from "../images/brightcouplephotos.jpg";
 import RightCenter from "../images/flowerandshoes.jpg";
 import Center from "../images/brightcouplephotos3.jpg";
+import { withRouter } from "react-router";
 const ThirdHome = () => (
   <>
     <Controller>
@@ -107,4 +108,4 @@ const ThirdHome = () => (
   </>
 );
 
-export default ThirdHome;
+export default withRouter(ThirdHome);

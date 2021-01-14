@@ -5,10 +5,11 @@ import nearkissImage from "../images/nearkiss.jpeg";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import { EasePack } from "gsap/all";
+import {withRouter} from 'react-router'
 function SecondHome() {
   return (
     <>
-      <Controller>
+      <Controller >
         <Scene
           spacerClass="scrollmagic"
           duration={1300}
@@ -82,4 +83,4 @@ function SecondHome() {
   );
 }
 
-export default SecondHome;
+export default withRouter(SecondHome);

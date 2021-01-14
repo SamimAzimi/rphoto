@@ -22,8 +22,8 @@ function Header() {
             <h2>
               <FontAwesomeIcon icon={faHome} style={{ color: "white" }} />
             </h2>
-          </Link>
           <p>Home</p>
+          </Link>
         </div>
         <div className="beehive1">
           <h2>
@@ -62,13 +62,16 @@ function Header() {
           <p>Packages</p>
         </div>
         <div className="beehive1">
+          <Link to="about" >
+
           <h2>
             <FontAwesomeIcon
               icon={faLocationArrow}
               style={{ color: "white" }}
-            />
+              />
           </h2>
           <p>About Us</p>
+              </Link>
         </div>
         <div className="beehive1">
           <Link to="adminpanel">

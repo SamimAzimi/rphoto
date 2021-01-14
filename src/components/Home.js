@@ -5,6 +5,7 @@ import bride from "../images/bride.jpeg";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline } from "react-gsap";
 import { EasePack } from "gsap/all";
+import { withRouter } from "react-router";
 function Home() {
   return (
     <>
@@ -72,4 +73,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default withRouter(Home);

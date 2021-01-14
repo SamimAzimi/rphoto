@@ -3,23 +3,26 @@ import "./App.css";
 import { faBars, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "./components/navbar";
-import Langingpage from "./components/Landingpage";
 import CoupleloginPage from "./components/CoupleloginPage";
 import React from "react";
 import { Route, useHistory } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import Couplegallary from "./components/CoupleGallary";
 import Adminpanel from "./components/AdminPanel";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AboutPage from './components/About'
 import { firebaseauth } from "./firebase.config";
+import Landingpage from "./components/Landingpage";
 function App() {
   // const [isActive, setIsActive] = useState(true);
 
   const history = useHistory();
-  const toggleMenu = () => {
-    history.push("/navbar");
-    
-  };
+
+
+    const toggleMenu = () => {
+      history.push("/navbar");
+      
+    };
+
   return (
     <>
       <div className="pin" id="pin"></div>
@@ -40,11 +43,12 @@ function App() {
           icon={faSignOutAlt}
         />
       </div>
-      <Route exact path="/" component={Langingpage} />
       <Route exact path="/navbar" component={Navbar} />
+      <Route exact path="/" component={Landingpage} />
       <Route exact path="/coupleloginpage" component={CoupleloginPage} />
       <PrivateRoute exact path="/adminpanel" component={Adminpanel} />
       <PrivateRoute exact path="/couplegallary" component={Couplegallary} />
+      <Route exact path="/about" component={AboutPage} />
     </>
   );
 }
