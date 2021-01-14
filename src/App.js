@@ -1,12 +1,12 @@
 import "./App.css";
 // import { motion } from "framer-motion";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "./components/navbar";
 import Langingpage from "./components/Landingpage";
 import CoupleloginPage from "./components/CoupleloginPage";
 import React from "react";
-import { Route, useHistory, Redirect } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
 import Couplegallary from "./components/CoupleGallary";
 import Adminpanel from "./components/AdminPanel";
@@ -18,13 +18,12 @@ function App() {
   const history = useHistory();
   const toggleMenu = () => {
     history.push("/navbar");
-    <Redirect to={"/navbar"} />;
+    window.location.reload();
   };
   return (
     <>
       <div className="pin" id="pin"></div>
       <div className="menubar" id="menubarid">
-        {/* <Link to="/navbar"> */}
         <div className="icons">
           <FontAwesomeIcon
             onClick={toggleMenu}
@@ -33,10 +32,13 @@ function App() {
             icon={faBars}
           />
         </div>
-        {/* </Link> */}
       </div>
-      <div className="signoutButton">
-        <button onClick={() => firebaseauth.signOut()}>Sign Out</button>
+      <div className="signoutButton" onClick={() => firebaseauth.signOut()}>
+        <FontAwesomeIcon
+          className="fa-lg"
+          style={{ color: "#bf8faa" }}
+          icon={faSignOutAlt}
+        />
       </div>
       <Route exact path="/" component={Langingpage} />
       <Route exact path="/navbar" component={Navbar} />

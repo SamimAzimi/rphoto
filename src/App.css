@@ -17,3 +17,17 @@
   background-color: transparent;
   border-style: none;
 }
+.signoutButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: fixed;
+  width: 3%;
+  height: 3%;
+  right: 3%;
+  bottom: 8%;
+  font-size: 50px;
+  z-index: 99;
+}
