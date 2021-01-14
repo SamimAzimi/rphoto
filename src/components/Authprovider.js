@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "./authprovider.css";
 import { firebaseauth } from "../firebase.config";
 
 export const Authcontext = React.createContext();
@@ -15,7 +15,14 @@ export const Authprovider = ({ children }) => {
     });
   }, []);
   if (pending) {
-    return <>loading</>;
+    return (
+      <>
+        <div className="loadinganimation">
+          <div class="heart-loader"></div>
+          <div class="heart-loader"></div>
+        </div>
+      </>
+    );
   }
   return (
     <Authcontext.Provider value={{ currentUser }}>
