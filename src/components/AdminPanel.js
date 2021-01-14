@@ -1,5 +1,4 @@
 import React, { useCallback } from "react";
-import { withRouter } from "react-router-dom";
 import { firebaseauth } from "../firebase.config";
 
 function Adminpanel({ history }) {
