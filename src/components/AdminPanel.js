@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { firebaseauth } from "../firebase.config";
+import fire from "../firebase.config";
 
 function Adminpanel({ history }) {
   const handleSignUp = useCallback(
@@ -7,7 +7,7 @@ function Adminpanel({ history }) {
       event.preventDevault();
       const { email, password } = event.target.elements;
       try {
-        await firebaseauth.createUserWithEmailAndPassword(
+        await fire.auth.createUserWithEmailAndPassword(
           email.value,
           password.value
         );

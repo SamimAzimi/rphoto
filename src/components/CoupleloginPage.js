@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useContext, useCallback } from "react";
 import { withRouter, Redirect } from "react-router";
-import { firebaseauth } from "../firebase.config";
+import fire from "../firebase.config";
 import { Authcontext } from "./Authprovider";
 
 function CoupleloginPage({ history }) {
@@ -20,7 +20,7 @@ function CoupleloginPage({ history }) {
       const { email, password, confirm } = event.target.elements;
       try {
         if (confirm.value === password.value) {
-          firebaseauth.signInWithEmailAndPassword(email.value, password.value);
+          fire.auth.signInWithEmailAndPassword(email.value, password.value);
           history.push("/couplegallary");
         } else alert("password doesnt match but you found your life match");
       } catch (err) {

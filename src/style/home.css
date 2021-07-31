@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+:root {
+  --primary-color: #bfb188;
+  --opacity-color: #f2f2f2;
+  --main-color: #d9c6bf;
+  --brigh-color: #949fa6;
+  --brigh-color-shade: #bfaea8;
+  --bight-color-shade-2: #878a8c;
+  --bright-color-shade-3: #bfb188;
+  --shokh-color: #7f58a6;
+  --shokh-color-shade-1: #a6768c;
+  --semi-shokh: #bf8faa;
+  --dark-color: #2d2c40;
+  --dark-color-shade-1: #392259;
+
+  /* extract gardient */
+
+  --primary-gardient: #cebbb2;
+  --secondary-gardient: #65586e;
+  --third-gardient: #efece9;
+  --golden--: #a18b66;
+}
+
+.firstpagecontainer {
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.1fr 2.5fr;
+  gap: 0% 0px;
+  grid-row-gap: 1fr;
+  grid-template-areas:
+    "title title title"
+    "image-three iamge-one image-two";
+  background-color: #bfb188;
+  z-index: -2;
+}
+
+.firstpagetitle {
+  z-index: 9;
+  color: #7f58a6;
+  width: 100%;
+  justify-self: center;
+  grid-column: 1/-1;
+  text-align: center;
+  transform: translate(0px, 400px);
+}
+.titleitself {
+  font-family: "Sacramento", cursive;
+}
+.firstmainphoto {
+  align-self: center;
+}
+.firstbridephoto {
+  padding-left: 40%;
+  justify-self: right;
+  align-self: center;
+}
+.firstgroomphoto {
+  padding-right: 40%;
+  justify-self: left;
+  align-self: center;
+  z-index: -1;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+#titlesvg {
+  width: "434";
+  height: "65";
+}

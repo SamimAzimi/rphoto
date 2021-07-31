@@ -1,11 +1,9 @@
-import firebase from "firebase/app";
-import "firebase/storage";
-import "firebase/firestore";
-import "firebase/auth";
+import firebase from "firebase";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDigf9zE3uAfXpUGzRdqH8S3NuwsRltItM",
   authDomain: "rphoto-2d5ee.firebaseapp.com",
+  databaseURL: "https://rphoto-2d5ee-default-rtdb.firebaseio.com",
   projectId: "rphoto-2d5ee",
   storageBucket: "rphoto-2d5ee.appspot.com",
   messagingSenderId: "259199097654",
@@ -15,8 +13,11 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const ProjectStorage = firebase.storage();
-const ProjectFirestore = firebase.firestore();
-const firebaseauth = firebase.auth();
-const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
-export { ProjectStorage, ProjectFirestore, timeStamp, firebaseauth };
+// const ProjectStorage = firebase.storage();
+// const ProjectFirestore = firebase.firestore();
+// const fireDB = firebase.database();
+// const firebaseauth = firebase.auth();
+// const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
+// export { ProjectStorage, ProjectFirestore, timeStamp, firebaseauth, firebase };
+
+export default firebase;

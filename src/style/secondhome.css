@@ -1,0 +1,51 @@
+.secondpagecontainer {
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.1fr 2.5fr;
+  gap: 0% 0px;
+  grid-row-gap: 1fr;
+  grid-template-areas:
+    "title title title"
+    "image-three iamge-one image-two";
+  background-color: #392259;
+  z-index: -1;
+}
+
+.secondpagetitle {
+  z-index: 9;
+  color: white;
+  width: 100%;
+
+  justify-self: center;
+  grid-column: 1/-1;
+  text-align: center;
+}
+.secondtitleitself {
+  font-family: "Sacramento", cursive;
+}
+.secondmainphoto {
+  align-self: center;
+}
+.secondbridephoto {
+  padding-left: 40%;
+  justify-self: right;
+  align-self: center;
+}
+.secondgroomphoto {
+  padding-right: 40%;
+  justify-self: left;
+  align-self: center;
+  z-index: -1;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+#titlesvg {
+  width: "434";
+  height: "65";
+}

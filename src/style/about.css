@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=STIX+Two+Text&display=swap");
+.abtcontactsocial {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 0.3fr 1.8fr 1.6fr 0.3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 5px 50px;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
+iframe {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  height: auto;
+}
+.aboutStat {
+  grid-column-start: 2;
+}
+.aboutStat > h1 {
+  font-family: "Courgette", cursive;
+  color: rgba(221, 97, 97, 0.767);
+}
+.aboutStat > p {
+  font-family: "STIX Two Text", serif;
+  font-size: larger;
+}
+.aboutStat > h3 {
+  font-family: "Courgette", cursive;
+  color: rgba(221, 97, 97, 0.767);
+}
+
+.location > ul > li {
+  list-style: none;
+}

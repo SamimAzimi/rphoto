@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+.ThirdPageContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.2fr 1.4fr 1.6fr 0.3fr;
+  gap: 7px 8px;
+  grid-template-areas:
+    "header header header"
+    "lefttopimage thirdpagecenterimage righttopimage"
+    "leftcenterimage thirdpagecenterimage rightcenterimage"
+    "leftbotoomimage thirdpagecenterimage rightbottomimage"
+    "footer footer footer";
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  font-family: "Sacramento", cursive;
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 100%;
+  height: 20%;
+  z-index: 7;
+}
+.lefttopimage {
+  grid-area: lefttopimage;
+  width: 30%;
+  height: 100%;
+  position: relative;
+  left: 70%;
+}
+.leftcenterimage {
+  width: 30%;
+  height: 100%;
+  position: relative;
+  left: 70%;
+}
+.leftbotoomimage {
+  grid-area: leftbotoomimage;
+
+  width: 30%;
+  height: 58%;
+  position: absolute;
+  right: 0;
+}
+.righttopimage {
+  grid-area: righttopimage;
+  width: 30%;
+  height: 100%;
+}
+
+.rightcenterimage {
+  grid-area: rightcenterimage;
+  width: 30%;
+  height: 100%;
+}
+
+.rightbottomimage {
+  grid-area: rightbottomimage;
+  width: 30%;
+  height: 58%;
+}
+.thirdpagecenterimage {
+  display: flex;
+  justify-content: center;
+  grid-area: thirdpagecenterimage;
+}
+.footer {
+  grid-area: footer;
+  width: 20%;
+  height: 20%;
+  font-family: "Sofia", cursive;
+}
+img {
+  display: block;
+}
+
+.lefttopimage > img {
+  width: 100%;
+  height: 100;
+}
+.leftcenterimage > img {
+  width: 100%;
+  height: 100%;
+}
+.leftbotoomimage > img {
+  width: 100%;
+  height: 100%;
+}
+.righttopimage > img {
+  height: 100%;
+  width: 100%;
+}
+.rightcenterimage > img {
+  height: 100%;
+  width: 100%;
+}
+.rightbottomimage > img {
+  height: 100%;
+  width: 100%;
+}
