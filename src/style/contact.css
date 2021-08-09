@@ -16,7 +16,7 @@ textarea {
   width: 95%;
   font-family: "Courgette", cursive;
 }
-button {
+.sendContactFormButton {
   height: 50px;
   outline: none;
   border: none;
@@ -28,7 +28,7 @@ button {
 textarea {
   height: 100px;
 }
-button:hover {
+.sendContactFormButton:hover {
   background: rgba(235, 47, 47, 0.767);
   box-shadow: 0 8px 32px 0 rgba(194, 196, 223, 0.37);
   backdrop-filter: blur(18px);

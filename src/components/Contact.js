@@ -104,7 +104,7 @@ function Contact() {
           />
         </label>
 
-        <button type="submit">
+        <button type="submit" className="sendContactFormButton">
           <FontAwesomeIcon icon={faPaperPlane} /> Send
         </button>
       </form>
