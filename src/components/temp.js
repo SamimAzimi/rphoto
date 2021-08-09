@@ -49,45 +49,25 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
 
 ///
 
+      
+{urls.map((url, i) => {
+return  (       <img
+    key={i}
+    style={{ width: "500px" }}
+    src={url || "http://via.placeholder.com/300"}
+    alt="placeHolder"
+  />)
+})}
 
 
-const [imagePath,setImagePath]=useState([]);
-  const [bucketName,setBucketName]=useState();
 
-  const handleChange=(e)=>{
-   
-    for (let i =0; i < e.target.files.lenght; i++){
-        const newImage = e.target.files[i]
-        newImage["id"]= Math.random();
-        setImagePath((prevState)=>[...prevState,newImage]);
-      }
-      console.log(imagePath);
-    
-  }
+{urls.map((url, i) => {
 
-  const uploadImage = (e)=>{
-   
-  console.log(imagePath)
-    // const storageRef = fire.storage().ref(bucketName + imagePath)
-    
-    
-  }
-  console.log(imagePath)
-  return (
-    <>
-    <form className="AdminPanelForm">
-      <label htmlFor="bucketName" className="AdminPanelFormLabel" >
-      Album Name:
-      <input className="AdminPanelFormInput" type="text" name="bucketName" onChange={event => setBucketName(event.target.value)} />
-      </label>
-      <label className="AdminPanelFormLabel" htmlFor="fileName">
-        Choose Images:
-      <input className="AdminPanelFormInput"  multiple type="file" name="fileName" onChange={handleChange}/>
-      </label>
-      <button type="submit" className="submitImage" onClick={uploadImage} >
-        Upload
-        </button>
-      </form>
-    </>
-  );
-}
+  return(
+    <div key={i}>
+    <a href={url} target="_blank" rel="noreferrer" >
+      {url}
+    </a>
+  </div>
+  )
+})}

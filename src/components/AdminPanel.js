@@ -6,18 +6,21 @@ import "react-toastify/dist/ReactToastify.css";
 function Adminpanel() {
   const [images, setImages] = useState([]);
   const [albumName,setAlbumName] = useState()
-  const [urls, setUrls] = useState([]);
   const [progress, setProgress] = useState(0);
 
   const handleChange = (e) => {
+   
     for (let i = 0; i < e.target.files.length; i++) {
       const newImage = e.target.files[i];
       newImage["id"] = Math.random();
       setImages((prevState) => [...prevState, newImage]);
     }
+
   };
 
-  const handleUpload = () => {
+  const handleUpload = (e) => {
+    e.preventDefault();
+    if(images!==''){
     const promises = [];
      // eslint-disable-next-line
     images.map((image) => {
@@ -64,47 +67,38 @@ function Adminpanel() {
           await uploadTask.snapshot.ref
             .getDownloadURL()
             .then((urls) => {
-              setUrls((prevState) => [...prevState, urls]);
+              console.log("image Available on "+ urls)
             });
         }
       );
     });
 
     Promise.all(promises)
-      .then(() => toast.info("All images uploaded"))
+      .then(() => {
+        toast.info("All images uploaded");
+          })
       .catch((err) => console.log(err));
+  }else {
+    toast.warn("please Select an Image")
+  }
+
   };
 
 
   return (
     <>
-    <div>
-      <input type="text" onChange={(event)=>setAlbumName(event.target.value)} />
-      <input type="file" multiple onChange={handleChange} />
-      <button onClick={handleUpload}>Upload</button>
+    <form className="AdminPanelForm">
+    <label htmlFor="bucketName" className="AdminPanelFormLabel" >
+      Album Name:
+      </label>
+      <input type="text"  className="AdminPanelFormInput" onChange={(event)=>setAlbumName(event.target.value)} />
+      <label className="AdminPanelFormLabel" htmlFor="fileName">
+        Choose Images:
+      </label>
+      <input type="file"  className="AdminPanelFormInput" multiple onChange={handleChange} />
+      <button className="submitImage" onClick={handleUpload}>Upload</button>
       <progress value={progress} max="100" />
-
-      {urls.map((url, i) => {
-
-        return(
-          <div key={i}>
-          <a href={url} target="_blank" rel="noreferrer" >
-            {url}
-          </a>
-        </div>
-        )
-})}
-      <br />
-      
-      {urls.map((url, i) => {
-  return  (       <img
-          key={i}
-          style={{ width: "500px" }}
-          src={url || "http://via.placeholder.com/300"}
-          alt="placeHolder"
-        />)
-})}
-    </div>
+    </form>
           <ToastContainer
           position="top-right"
           autoClose={5000}
