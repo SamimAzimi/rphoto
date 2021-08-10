@@ -17,7 +17,19 @@ function Adminpanel() {
   const [email, setEmail] = useState();
   const [passwd, setPasswd] = useState();
   const [newPasswd, setnewPasswd] = useState();
-
+  const [messages, setMessages] = useState([]);
+  const readData = () => {
+    const messagesRef = firebase.database().ref("messages");
+    messagesRef.on("value", (snapshot) => {
+      const msgonDb = snapshot.val();
+      const messagelist = [];
+      for (let id in msgonDb) {
+        messagelist.push({ id, ...msgonDb[id] });
+      }
+      setMessages(messagelist);
+      console.log(messages);
+    });
+  };
   const changeadminPassword = (e) => {
     e.preventDefault();
     let user = firebase.auth().currentUser;
@@ -58,6 +70,12 @@ function Adminpanel() {
     } else {
       alert("fill user name and password");
     }
+  };
+  const deleteData = (id) => {
+    firebase
+      .database()
+      .ref("messages/" + id)
+      .remove();
   };
   const seeAlbums = () => {
     toast.info("comming soon");
@@ -222,6 +240,31 @@ function Adminpanel() {
             Sign Out
           </button>
         </form>
+
+        <div className="Messages">
+          <button className="RetrieveMessage" onClick={readData}>
+            Show Messages
+          </button>
+          <div className="CustomerMessages">
+            {messages.map((msg) => {
+              return (
+                <div className="CustomerMessage" key={msg.id}>
+                  <h6>{msg.fname}</h6>
+                  <h6>{msg.email}</h6>
+                  <h6>{msg.subject}</h6>
+                  <h6 className="msgCustomer">{msg.message}</h6>
+                  <button
+                    className="EmailDelBtn"
+                    onClick={() => deleteData(msg.id)}
+                    type="submit"
+                  >
+                    Delete
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
       <ToastContainer
         position="top-right"
