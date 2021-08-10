@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <div className="pin" id="pin"></div>
+
       <Navbar />
       <Route exact path="/" component={Home} />
       <Route exact path="/AboutUs" component={AboutPage} />

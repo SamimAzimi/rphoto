@@ -5,11 +5,11 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Authprovider } from "./components/Authcontext";
 ReactDOM.render(
-  <Authprovider>
-    <Router>
+  <Router>
+    <Authprovider>
       <App />
-    </Router>
-  </Authprovider>,
+    </Authprovider>
+  </Router>,
 
   document.getElementById("root")
 );

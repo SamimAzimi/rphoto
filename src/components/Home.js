@@ -24,7 +24,6 @@ function Home() {
         <Scene
           spacerClass="scrollmagic"
           duration={1300}
-          indicators="true"
           triggerHook="onLeave"
           pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
           reverse={true}
@@ -84,7 +83,6 @@ function Home() {
         <Scene
           spacerClass="scrollmagic"
           duration={1300}
-          indicators="true"
           triggerHook="onLeave"
           pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
           reverse={true}
@@ -155,7 +153,6 @@ function Home() {
           triggerHook="onLeave"
           duration={1200}
           reverse={true}
-          indicators="true"
           pin={{ pushFollowers: true, spacerClass: "secondpagecontainer" }}
         >
           {(progress) => (

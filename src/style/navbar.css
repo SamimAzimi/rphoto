@@ -41,6 +41,7 @@ a {
   backdrop-filter: blur(18px);
   list-style: none;
   line-height: 100px;
+  color: white;
   border-radius: 50% 50%;
   transition: all 2s;
   -webkit-animation-name: fadeInRight;
