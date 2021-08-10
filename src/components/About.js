@@ -1,6 +1,6 @@
 import Contact from "./Contact";
 import SocialMedia from "./SocialMedia";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

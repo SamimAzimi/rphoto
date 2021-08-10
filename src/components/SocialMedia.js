@@ -5,19 +5,19 @@ export default function SocialMedia() {
     <div class="container">
       <ul class="social">
         <li class="facebook">
-          <a href="www.facebook.com/rphoto" class="entypo-facebook"></a>
+          <a href="#" class="entypo-facebook"></a>
         </li>
         <li class="twitter">
-          <a href="www.facebook.com/rphoto" class="entypo-twitter"></a>
+          <a href="#" class="entypo-twitter"></a>
         </li>
         <li class="dribbble">
-          <a href="www.facebook.com/rphoto" class="entypo-dribbble"></a>
+          <a href="#" class="entypo-dribbble"></a>
         </li>
         <li class="behance">
-          <a href="www.facebook.com/rphoto" class="entypo-behance"></a>
+          <a href="#" class="entypo-behance"></a>
         </li>
         <li class="linked-in">
-          <a href="www.facebook.com/rphoto" class="entypo-linkedin"></a>
+          <a href="#" class="entypo-linkedin"></a>
         </li>
       </ul>
     </div>

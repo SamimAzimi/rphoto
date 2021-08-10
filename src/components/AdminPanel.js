@@ -60,7 +60,7 @@ function Adminpanel() {
     }
   };
   const seeAlbums = () => {
-    const result = firebase.storage().ref("sam/").child();
+    toast.info("comming soon");
   };
   const handleUpload = (e) => {
     e.preventDefault();
