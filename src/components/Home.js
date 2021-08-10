@@ -1,6 +1,5 @@
 import "../style/home.css";
-import "../style/secondhome.css";
-import "../style/thirdhome.css";
+
 import couple from "../images/couple.jpeg";
 import groom from "../images/groom.jpeg";
 import bride from "../images/bride.jpeg";
@@ -157,7 +156,7 @@ function Home() {
           duration={1200}
           reverse={true}
           indicators="true"
-          pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
+          pin={{ pushFollowers: true, spacerClass: "secondpagecontainer" }}
         >
           {(progress) => (
             <div className="ThirdPageContainer">

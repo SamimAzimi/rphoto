@@ -1,11 +1,132 @@
+.AdminPanelContainer {
+  background: url(../images/purpose.jpeg);
 
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: 0.5fr 1.6fr 1.5fr 0.4fr;
+  grid-template-rows: 0.3fr 1.7fr 1.7fr 0.3fr;
+  gap: 20px 20px;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
 .AdminPanelForm {
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  line-height: 1.5;
+  color: black;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
 
-    border:1px solid black;
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.adminStaff {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column-start: 3;
+  grid-row-start: 3;
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+}
+.AdminPanelFormLabel {
+  border-radius: 30px;
+  padding: 5px;
+  margin: 10px;
+  outline-style: none;
+  outline-color: white;
+  margin-left: 20px;
+  color: whitesmoke;
+  font-family: "Courgette", cursive;
+}
+
+.AlbumInformation {
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  line-height: 1.5;
+  color: black;
+  font-size: 20px;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+.SingleAlbum {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.ablumH {
+  font-family: "Courgette", cursive;
+}
+fieldset {
+  color: black;
+  background-color: rgb(255, 255, 255, 0.5);
+  width: 100%;
+  outline-style: none;
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+}
+.submitImage,
+.signoutbtn,
+.CreateEmail,
+.ChangePasswd {
+  background-color: rgb(255, 255, 255, 0.5);
+  width: 100%;
+  outline-style: none;
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  line-height: 1.5;
+  color: #392259;
+  border-radius: none;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.submitImage:hover {
+  background-color: rgb(255, 255, 255, 0.8);
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.5);
+  line-height: 1.5;
+  color: #392259;
+  border-radius: none;
+  font-size: 20px;
+}
+.AdminPanelFormInput,
+.AdminPanelFormFiles,
+.createEmail {
+  border-radius: 30px;
+  padding: 5px;
+  width: 100%;
+  outline-style: none;
+  outline-color: white;
 }

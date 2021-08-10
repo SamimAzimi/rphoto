@@ -42,7 +42,7 @@ function Header() {
             <li>
               <Link to="coupleloginpage">
                 <FontAwesomeIcon icon={faPersonBooth} className="navicon" />
-                Couple Login Page
+                Couple Gallary
               </Link>
             </li>
             <li>
