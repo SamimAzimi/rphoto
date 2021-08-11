@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import fire from "../firebase.config";
 import "../style/coupleGallary.css";
-import photo from "../images/bride.jpeg";
 
 // import Slider from "react-animated-slider";
 // import "react-animated-slider/build/horizontal.css";
 // import Couple from "../images/gardenCouple.jpeg";
-
+import { Authcontext } from "./Authcontext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function CoupleGallary() {
+  const { currentUser } = useContext(Authcontext);
+  const [wait, setWait] = useState(true);
+  const [userimages, setUserImages] = useState([]);
   const handleSignOut = () => {
     fire.auth().signOut();
+  };
+  useEffect(() => {
+    const userImages = [];
+    var storageRef = fire.storage().ref("user");
+    storageRef
+      .child(currentUser.uid)
+      .listAll()
+      .then(function (result) {
+        result.items.forEach(function (imagref) {
+          imagref.getDownloadURL().then(function (url) {
+            userImages.push(url);
+            console.log(url);
+          });
+        });
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        toast.info(errorCode, errorMessage);
+      });
+    setUserImages(userImages);
+  }, [currentUser.uid]);
+  const DownloadImages = () => {
+    if (userimages) {
+      setWait(!wait);
+    }
   };
 
   return (
@@ -37,11 +67,28 @@ function CoupleGallary() {
           </button>
         </div>
         <div className="coupleImagesContainer">
-          <div className="coupleImageSlider">
-            <img src={photo} alt="couple" />
-          </div>
+          {wait ? (
+            <div>Loading.....</div>
+          ) : (
+            <div className="coupleImageSlider">
+              {userimages.map((img, index) => {
+                return <img key={index} src={img} alt="couple" />;
+              })}
+            </div>
+          )}
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }
