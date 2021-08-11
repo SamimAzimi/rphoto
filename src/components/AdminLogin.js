@@ -13,9 +13,9 @@ import { withRouter, Redirect } from "react-router";
 import fire from "../firebase.config";
 import { Authcontext } from "./Authcontext";
 
-function CoupleloginPage({ history }) {
+function AdminLogin({ history }) {
   const [show, setShow] = useState(false);
-
+  
   const handleloginsubmit = useCallback(
     async (event) => {
       event.preventDefault();
@@ -23,8 +23,8 @@ function CoupleloginPage({ history }) {
       try {
         if (confirm.value === password.value) {
           fire
-            .auth()
-            .signInWithEmailAndPassword(email.value, password.value)
+          .auth()
+          .signInWithEmailAndPassword(email.value, password.value)
             .then((userCredential) => {
               // Signed in
               // ...
@@ -33,18 +33,18 @@ function CoupleloginPage({ history }) {
               var errorMessage = error.message;
               toast.info(errorMessage);
             });
-          history.push("/adminPanel");
-        } else {
-          toast.info("password doesnt match but you found your life match");
+            history.push("/adminPanel");
+          } else {
+            toast.info("password doesnt match but you found your life match");
+          }
+        } catch (err) {
+          toast.info(err);
         }
-      } catch (err) {
-        toast.info(err);
-      }
-    },
-    [history]
-  );
-  const { currentUser } = useContext(Authcontext);
-  if (currentUser) {
+      },
+      [history]
+      );
+      const { currentUser } = useContext(Authcontext);
+      if (currentUser) {
     return <Redirect to="/adminPanel" />;
   }
   return (
@@ -122,4 +122,4 @@ function CoupleloginPage({ history }) {
     </>
   );
 }
-export default withRouter(CoupleloginPage);
+export default withRouter(AdminLogin);
