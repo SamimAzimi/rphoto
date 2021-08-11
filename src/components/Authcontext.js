@@ -18,8 +18,8 @@ export const Authprovider = ({ children }) => {
     return (
       <>
         <div className="loadinganimation">
-          <div class="heart-loader"></div>
-          <div class="heart-loader"></div>
+          <div className="heart-loader"></div>
+          <div className="heart-loader"></div>
         </div>
       </>
     );

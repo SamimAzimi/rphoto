@@ -33,7 +33,7 @@ function CoupleloginPage({ history }) {
               var errorMessage = error.message;
               toast.info(errorMessage);
             });
-          history.push("/couplegallary");
+          history.push("/adminPanel");
         } else {
           toast.info("password doesnt match but you found your life match");
         }
@@ -45,11 +45,12 @@ function CoupleloginPage({ history }) {
   );
   const { currentUser } = useContext(Authcontext);
   if (currentUser) {
-    return <Redirect to="/couplegallary" />;
+    return <Redirect to="/adminPanel" />;
   }
   return (
     <>
       <div className="clogincontainer">
+        <h1>Admin</h1>
         <div className="glassmorph">
           <div className="socialmediaButtons">
             {/* 

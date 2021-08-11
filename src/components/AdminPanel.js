@@ -6,11 +6,17 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSignOutAlt,
+  faMinus,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Adminpanel() {
+  const [clicked, setClicked] = useState(true);
   const [images, setImages] = useState([]);
+  const [userlists, setUserLists] = useState([]);
   const [albumName, setAlbumName] = useState();
   const [progress, setProgress] = useState(0);
   const [oneImage, setOneImage] = useState();
@@ -27,7 +33,6 @@ function Adminpanel() {
         messagelist.push({ id, ...msgonDb[id] });
       }
       setMessages(messagelist);
-      console.log(messages);
     });
   };
   const changeadminPassword = (e) => {
@@ -56,9 +61,22 @@ function Adminpanel() {
         .auth()
         .createUserWithEmailAndPassword(email, passwd)
         .then((userCredential) => {
-          var user = userCredential.user;
-          if (user) {
-            toast.info("User Has Been Created");
+          var userd = userCredential.user;
+
+          if (userd) {
+            const userProfile = {
+              userEmail: userd.email,
+              userID: userd.uid,
+            };
+            console.log(userd.email, userd.uid);
+            const customerProfile = firebase.database().ref("users");
+            customerProfile.push(userProfile, (error) => {
+              if (error) {
+                toast.info(error.code, error.message);
+              } else {
+                toast.info("User Has Been Created");
+              }
+            });
           }
         })
         .catch((error) => {
@@ -78,7 +96,20 @@ function Adminpanel() {
       .remove();
   };
   const seeAlbums = () => {
-    toast.info("comming soon");
+    if (clicked) {
+      const userRef = firebase.database().ref("users");
+      userRef.on("value", (snapshot) => {
+        const useronDb = snapshot.val();
+        const userlist = [];
+        for (let id in useronDb) {
+          userlist.push({ id, ...useronDb[id] });
+        }
+        setUserLists(userlist);
+        setClicked(!clicked);
+      });
+    } else {
+      setClicked(!clicked);
+    }
   };
   const handleUpload = (e) => {
     e.preventDefault();
@@ -89,7 +120,7 @@ function Adminpanel() {
         images.map((image) => {
           const uploadTask = firebase
             .storage()
-            .ref(`${albumName}/${image.name}`)
+            .ref(`user/${albumName}/${image.name}`)
             .put(image);
           promises.push(uploadTask);
           uploadTask.on(
@@ -183,19 +214,42 @@ function Adminpanel() {
         </form>
         <div className="AlbumInformation">
           <h1 className="ablumH">Albums</h1>
-          <button type="submit" onClick={seeAlbums} className="submitImage">
-            See All Albums
+          <button
+            type="submit"
+            onClick={seeAlbums}
+            className="submitImage seeAlbum"
+          >
+            Users
+            <span>
+              {" "}
+              {clicked ? (
+                <FontAwesomeIcon icon={faPlus} />
+              ) : (
+                <FontAwesomeIcon icon={faMinus} />
+              )}
+            </span>
           </button>
-          <div className="SingleAlbum">
-            <h5 className="ablumH">Album Name</h5>
-            <input className="AdminPanelFormInput" type="text" />
-            <button type="submit" className="submitImage">
-              Permit Downloads
-            </button>
-            <button type="submit" className="submitImage">
-              List Images
-            </button>
-          </div>
+          {!clicked ? (
+            <div>
+              {userlists.map((users) => {
+                return (
+                  <div className="userProfiles" key={users.id}>
+                    <div>
+                      {" "}
+                      <span className="heading">User Email: </span>{" "}
+                      {users.userEmail}
+                    </div>
+                    <div>
+                      {" "}
+                      <span className="heading">Album Name: </span>
+                      {users.userID}
+                    </div>
+                    <hr />
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
         <form className="adminStaff">
           <fieldset>
@@ -212,7 +266,7 @@ function Adminpanel() {
               type="password"
               value={passwd}
               placeholder="Type Password for Email"
-              class="createEmail"
+              className="createEmail"
               onChange={(e) => setPasswd(e.target.value)}
             />
             <button className="CreateEmail" onClick={createUser}>
@@ -225,7 +279,7 @@ function Adminpanel() {
               value={newPasswd}
               onChange={(e) => setnewPasswd(e.target.value)}
               type="text"
-              class="createEmail"
+              className="createEmail"
               placeholder="change Admin Password"
             />
             <button className="ChangePasswd" onClick={changeadminPassword}>
@@ -249,13 +303,21 @@ function Adminpanel() {
             {messages.map((msg) => {
               return (
                 <div className="CustomerMessage" key={msg.id}>
-                  <h6><span className="heading">Name:</span> {msg.fname}</h6>
-                  <h6><span className="heading">Email:</span> {msg.email}</h6>
-                  <h6><span className="heading">Subject:</span> {msg.subject}</h6>
+                  <h6>
+                    <span className="heading">Name:</span> {msg.fname}
+                  </h6>
+                  <h6>
+                    <span className="heading">Email:</span> {msg.email}
+                  </h6>
+                  <h6>
+                    <span className="heading">Subject:</span> {msg.subject}
+                  </h6>
 
-                  <p className="msgCustomer"><span className="heading">Messages: </span>
-                  <br />
-                  {msg.message}</p>
+                  <p className="msgCustomer">
+                    <span className="heading">Messages: </span>
+                    <br />
+                    {msg.message}
+                  </p>
                   <button
                     className="EmailDelBtn"
                     onClick={() => deleteData(msg.id)}

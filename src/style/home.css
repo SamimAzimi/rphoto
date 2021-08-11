@@ -118,10 +118,6 @@ img {
   z-index: -1;
 }
 
-img {
-  width: 100%;
-  display: block;
-}
 #titlesvg {
   width: "434";
   height: "65";
