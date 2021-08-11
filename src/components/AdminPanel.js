@@ -249,10 +249,13 @@ function Adminpanel() {
             {messages.map((msg) => {
               return (
                 <div className="CustomerMessage" key={msg.id}>
-                  <h6>{msg.fname}</h6>
-                  <h6>{msg.email}</h6>
-                  <h6>{msg.subject}</h6>
-                  <h6 className="msgCustomer">{msg.message}</h6>
+                  <h6><span className="heading">Name:</span> {msg.fname}</h6>
+                  <h6><span className="heading">Email:</span> {msg.email}</h6>
+                  <h6><span className="heading">Subject:</span> {msg.subject}</h6>
+
+                  <p className="msgCustomer"><span className="heading">Messages: </span>
+                  <br />
+                  {msg.message}</p>
                   <button
                     className="EmailDelBtn"
                     onClick={() => deleteData(msg.id)}

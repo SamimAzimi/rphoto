@@ -43,10 +43,10 @@ function Contact() {
             toast.info("kindly submit the form again");
           } else {
             toast.info("Your Message has been sent to rphoto successfully");
+            toast.info("Thank You for your message , we will contact you shortly");
+            setPerson({ fname: "", email: "", subject: "", message: "" });
           }
         });
-        toast.info("Thank You for your message , we will contact you shortly");
-        setPerson({ fname: "", email: "", subject: "", message: "" });
       }
     } else {
       toast.info("Please Fill The Form");
@@ -65,8 +65,8 @@ function Contact() {
             id="fname"
             type="text"
             placeholder="Name"
-          />
-        </label>
+            />
+            </label>
 
         <label htmlFor="email">
           <FontAwesomeIcon className="formIcons" icon={faEnvelope} />
@@ -95,7 +95,8 @@ function Contact() {
 
         <label htmlFor="Message">
           <FontAwesomeIcon className="formIcons" icon={faComment} />
-          <textarea
+          <input
+            type="text"
             value={person.message}
             onChange={handleChange}
             name="message"

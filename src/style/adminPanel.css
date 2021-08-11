@@ -139,27 +139,29 @@ fieldset {
 }
 .Messages {
   display: flex;
-  height: auto;
   flex-direction: column;
   grid-column-start: 2;
   grid-row-start: 3;
   overflow: scroll;
 }
 
-.detailsMessage {
-  width: 100%;
-  height: auto;
-  text-overflow: clip;
-}
 .CustomerMessage {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255, 255, 255, 0.8);
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.5);
-  line-height: 1.5;
-  color: #392259;
-  border-radius: none;
+  background-color: rgb(255, 255, 255, 0.5);
+  width: 100%;
+  outline-style: none;
+  backdrop-filter: blur(1px);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
   font-size: 20px;
+}
+.heading {
+   color: #392259;
+}
+.msgCustomer {
+  width:100%;
+  word-wrap: normal;
 }
 .CustomerMessages {
   width: 100%;

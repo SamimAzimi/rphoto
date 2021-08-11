@@ -9,11 +9,11 @@
   grid-row-start: 1;
 }
 .formIcons {
-  margin-right: 10px;
+  margin-right: 5px;
 }
-input,
-textarea {
-  width: 95%;
+input {
+  width: 90%;
+  
   font-family: "Courgette", cursive;
 }
 .sendContactFormButton {
@@ -25,9 +25,7 @@ textarea {
   box-shadow: 0 8px 32px 0 rgba(194, 196, 223, 0.37);
   backdrop-filter: blur(18px);
 }
-textarea {
-  height: 100px;
-}
+
 .sendContactFormButton:hover {
   background: rgba(235, 47, 47, 0.767);
   box-shadow: 0 8px 32px 0 rgba(194, 196, 223, 0.37);

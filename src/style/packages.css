@@ -8,6 +8,15 @@
   text-align: center;
   font-family: "Courgette", cursive;
 }
+.packageDetails {
+  color:white;
+}
+
+.packageDetails > h4 {
+  margin:20px;
+  font-family: "helvetica", san-serif;
+  font-size: medium;
+}
 .tilesWrap li {
   display: inline-block;
   width: 20%;
@@ -40,6 +49,12 @@
   background-size: cover;
   background-blend-mode: overlay;
   background-image: url("../images/purpose.jpeg");
+}
+.tilesWrap li:nth-child(4) {
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-image: url("../images/groom.jpeg");
 }
 .tilesWrap li h2 {
   font-size: 114px;
@@ -124,22 +139,25 @@
   background: rgba(255, 255, 255, 0.02);
 }
 .tilesWrap li:nth-child(1):before {
-  background: #c9ffbf;
-  background: -webkit-linear-gradient(to right, #ffafbd, #c9ffbf);
-  background: linear-gradient(to right, #ffafbd, #c9ffbf);
+  background: #bfaea8;
+  background: -webkit-linear-gradient(to right, #878a8c, #bfb188);
+  background: linear-gradient(to right, #7f58a6, #a6768c);
 }
 .tilesWrap li:nth-child(2):before {
-  background: #f2709c;
-  background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
-  background: linear-gradient(to right, #ff9472, #f2709c);
+  background: #392259;
+  background: -webkit-linear-gradient(to right, #2d2c40, #65586e);
+  background: linear-gradient(to right, #a6768c, #392259);
 }
 .tilesWrap li:nth-child(3):before {
-  background: #c21500;
-  background: -webkit-linear-gradient(to right, #ffc500, #c21500);
-  background: linear-gradient(to right, #ffc500, #c21500);
+  background: #f2f2f2;
+  background: -webkit-linear-gradient(to right, #65586e, #c21500);
+  background: linear-gradient(to right, #a6768c, #a6768c);
 }
 .tilesWrap li:nth-child(4):before {
-  background: #fc354c;
-  background: -webkit-linear-gradient(to right, #0abfbc, #fc354c);
-  background: linear-gradient(to right, #0abfbc, #fc354c);
+  background: #7f58a6;
+  background: -webkit-linear-gradient(to right, #e65656, #d60c24);
+  background: linear-gradient(to right, #a6768c, #fc354c);
+}
+.SelectButton {
+  z-index: 15;
 }
