@@ -25,7 +25,6 @@ function CoupleGallary() {
         result.items.forEach(function (imagref) {
           imagref.getDownloadURL().then(function (url) {
             userImages.push(url);
-            console.log(url);
           });
         });
       })

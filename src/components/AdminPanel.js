@@ -14,6 +14,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Adminpanel() {
+  const urlarray = [];
+  const [urlarrays, setUrlarrays] = useState([]);
+  const [refer, setRefer] = useState();
   const [clicked, setClicked] = useState(true);
   const [images, setImages] = useState([]);
   const [userlists, setUserLists] = useState([]);
@@ -111,6 +114,17 @@ function Adminpanel() {
       setClicked(!clicked);
     }
   };
+  const handleDelete = (e) => {
+    e.preventDefault();
+    const collections = firebase.firestore().collection();
+    collections
+      .doc(albumName)
+      .delete()
+      .then(() => {
+        toast.info(albumName, "sucessfully Deleted");
+      })
+      .catch((error) => toast.info(error.code, error.message));
+  };
   const handleUpload = (e) => {
     e.preventDefault();
     if (albumName) {
@@ -120,7 +134,7 @@ function Adminpanel() {
         images.map((image) => {
           const uploadTask = firebase
             .storage()
-            .ref(`user/${albumName}/${image.name}`)
+            .ref(`${refer}/${albumName}/${image.name}`)
             .put(image);
           promises.push(uploadTask);
           uploadTask.on(
@@ -163,9 +177,8 @@ function Adminpanel() {
               }
             },
             async () => {
-              await uploadTask.snapshot.ref.getDownloadURL().then((urls) => {
-                // console.log("image Available on " + urls);
-              });
+              const url = await uploadTask.snapshot.ref.getDownloadURL();
+              urlarray.push(url);
             }
           );
         });
@@ -174,6 +187,13 @@ function Adminpanel() {
           .then(() => {
             toast.info("All images uploaded");
             setOneImage("All Images Uploaded");
+            setUrlarrays(urlarray);
+          })
+          .then(() => {
+            console.log(urlarrays);
+            const collection = firebase.database().ref(`${refer}/`);
+
+            collection.update({ urlarrays });
           })
           .catch((err) => console.log(err));
       } else {
@@ -183,11 +203,20 @@ function Adminpanel() {
       toast.warn("Please Type Album Name");
     }
   };
-
+  console.log(urlarrays);
   return (
     <>
       <div className="AdminPanelContainer">
         <form className="AdminPanelForm">
+          <label htmlFor="bucketName" className="AdminPanelFormLabel">
+            Refer:
+          </label>
+          <input
+            type="text"
+            value={refer}
+            className="AdminPanelFormInput"
+            onChange={(event) => setRefer(event.target.value)}
+          />
           <label htmlFor="bucketName" className="AdminPanelFormLabel">
             Album Name:
           </label>
@@ -210,6 +239,9 @@ function Adminpanel() {
           <Progress percent={progress} status="success" />
           <button className="submitImage" onClick={handleUpload}>
             Upload
+          </button>
+          <button className="submitImage" onClick={handleDelete}>
+            Delete
           </button>
         </form>
         <div className="AlbumInformation">
