@@ -15,7 +15,7 @@ import { Authcontext } from "./Authcontext";
 
 function AdminLogin({ history }) {
   const [show, setShow] = useState(false);
-  
+
   const handleloginsubmit = useCallback(
     async (event) => {
       event.preventDefault();
@@ -23,8 +23,8 @@ function AdminLogin({ history }) {
       try {
         if (confirm.value === password.value) {
           fire
-          .auth()
-          .signInWithEmailAndPassword(email.value, password.value)
+            .auth()
+            .signInWithEmailAndPassword(email.value, password.value)
             .then((userCredential) => {
               // Signed in
               // ...
@@ -33,24 +33,23 @@ function AdminLogin({ history }) {
               var errorMessage = error.message;
               toast.info(errorMessage);
             });
-            history.push("/adminPanel");
-          } else {
-            toast.info("password doesnt match but you found your life match");
-          }
-        } catch (err) {
-          toast.info(err);
+          history.push("/adminPanel");
+        } else {
+          toast.info("password doesnt match but you found your life match");
         }
-      },
-      [history]
-      );
-      const { currentUser } = useContext(Authcontext);
-      if (currentUser) {
+      } catch (err) {
+        toast.info(err);
+      }
+    },
+    [history]
+  );
+  const { currentUser } = useContext(Authcontext);
+  if (currentUser) {
     return <Redirect to="/adminPanel" />;
   }
   return (
     <>
       <div className="clogincontainer">
-        <h1>Admin</h1>
         <div className="glassmorph">
           <div className="socialmediaButtons">
             {/* 

@@ -10,6 +10,7 @@ import Adminpanel from "./components/AdminPanel";
 import CoupleloginPage from "./components/CoupleloginPage";
 import AdminLogin from "./components/AdminLogin";
 import PrivateRoute from "./components/PrivateRoute";
+import PrivateRouteAdmin from "./components/PrivateRouteAdmin";
 import Couplegallary from "./components/CoupleGallary";
 
 function App() {
@@ -22,9 +23,9 @@ function App() {
       <Route exact path="/AboutUs" component={AboutPage} />
       <Route exact path="/Packages" component={Packages} />
       <Route exact path="/Gallary" component={Gallary} />
-      <Route exact path="/cms" component={AdminLogin} />
+      <Route exact path="/AdminLogin" component={AdminLogin} />
       <Route exact path="/coupleloginpage" component={CoupleloginPage} />
-      <PrivateRoute exact path="/adminPanel" component={Adminpanel} />
+      <PrivateRouteAdmin exact path="/AdminPanel" component={Adminpanel} />
       <PrivateRoute exact path="/couplegallary" component={Couplegallary} />
     </>
   );

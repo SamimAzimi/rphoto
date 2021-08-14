@@ -28,7 +28,6 @@ function Home() {
           pin={{ pushFollowers: true, spacerClass: "firstpagecontainer" }}
           reverse={true}
           triggerElement="#pin"
-          loglevel={3}
         >
           {(progress) => (
             <div className="firstpagecontainer">
