@@ -21,11 +21,11 @@ function Gallary() {
         <img src={tempImgsrc} alt="co" />
       </div>
       <h1 className="gallaryHeading">Moments Captured</h1>
-      <div className="gallary">
+      <div className="gallaries">
         {docs ? (
           docs.map((url) => {
             return (
-              <div onClick={() => getImage(url)} className="pics">
+              <div onClick={() => getImage(url)} className="pictures">
                 <img src={url} alt="couple" style={{ width: "100%  " }} />
               </div>
             );
