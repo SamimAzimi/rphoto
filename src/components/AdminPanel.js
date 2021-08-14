@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Adminpanel() {
   const urlarray = [];
-  const [urlarrays, setUrlarrays] = useState([]);
+
   const [refer, setRefer] = useState();
   const [clicked, setClicked] = useState(true);
   const [images, setImages] = useState([]);
@@ -187,14 +187,10 @@ function Adminpanel() {
           .then(() => {
             toast.info("All images uploaded");
             setOneImage("All Images Uploaded");
-            console.log(urlarray)
-            setUrlarrays(urlarray);
           })
           .then(() => {
-            console.log(urlarrays);
             const collection = firebase.database().ref(`${refer}`);
-
-            collection.set({urlarrays});
+            collection.set({ urlarray });
           })
           .catch((err) => console.log(err));
       } else {
