@@ -26,7 +26,7 @@ function Gallary() {
           docs.map((url) => {
             return (
               <div onClick={() => getImage(url)} className="pictures">
-                <img src={url} alt="couple" style={{ width: "100%  " }} />
+                <img src={url} alt="couple" />
               </div>
             );
           })

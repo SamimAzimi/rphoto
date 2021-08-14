@@ -16,26 +16,7 @@
 .gallaries .pictures:hover {
   filter: opacity(0.8);
 }
-@media (max-width: 991px) {
-  .gallaries {
-    column-count: 2;
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    -moz-column-width: 33%;
-    column-width: 33%;
-  }
-}
 
-@media (max-width: 480px) {
-  .gallaries {
-    column-count: 1;
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-
-    -moz-column-width: 33%;
-    column-width: 33%;
-  }
-}
 .gallaryHeading {
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 50px;
@@ -112,4 +93,24 @@
   color: white;
   cursor: pointer;
   z-index: 10;
+}
+@media (max-width: 991px) {
+  .gallaries {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-width: 33%;
+    column-width: 33%;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallaries {
+    column-count: 1;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+
+    -moz-column-width: 33%;
+    column-width: 33%;
+  }
 }
