@@ -34,7 +34,12 @@
   grid-template-areas:
     "title title title"
     "image-three iamge-one image-two";
-  background-color: #bfb188;
+  background-color: rgb(191, 177, 136,0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
   z-index: -2;
 }
 
@@ -46,6 +51,8 @@
   grid-column: 1/-1;
   text-align: center;
   transform: translate(0px, 400px);
+  position: fixed;
+  font-size: 4rem;
 }
 .titleitself {
   font-family: "Sacramento", cursive;
@@ -87,7 +94,12 @@ img {
   grid-template-areas:
     "title title title"
     "image-three iamge-one image-two";
-  background-color: #392259;
+  background-color: rgb(57, 34, 89,0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(1px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
   z-index: -1;
 }
 
