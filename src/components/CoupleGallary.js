@@ -1,47 +1,65 @@
 import React, { useState, useEffect, useContext } from "react";
 import fire from "../firebase.config";
-// import "../style/coupleGallary.css";
+import "../style/coupleGallary.css";
 // import Slider from "react-animated-slider";
 // import "react-animated-slider/build/horizontal.css";
 // import Couple from "../images/gardenCouple.jpeg";
 import { Authcontext } from "./Authcontext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter } from "react-router-dom";
 function CoupleGallary() {
   const { currentUser } = useContext(Authcontext);
   const [userimages, setUserImages] = useState([]);
-  const [wait,setWait] = useState(true);
+
   const handleSignOut = () => {
     fire.auth().signOut();
   };
+  const userImages = [];
   useEffect(() => {
     var storageRef = fire.storage().ref("users");
-    
+    function function1(param, callback) {
+      return new Promise(function (fulfill, reject) {
+        // storage function
+        storageRef
+          .child(currentUser.uid)
+          .listAll()
+          .then(function (result) {
+            result.items.forEach(function (imagref) {
+              imagref.getDownloadURL().then(function (url) {
+                userImages.push(url);
+                console.log(url);
+                setUserImages(userImages);
+              });
+            });
+          })
+          .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            toast.info(errorCode, errorMessage);
+          });
+        //
+        fulfill("finished"); //if the action succeeded
+        reject("error"); //if the action did not succeed
+      });
+    }
 
-    const userImages = [];
-    storageRef
-    .child(currentUser.uid)
-    .listAll()
-    .then(function (result) {
-    result.items.forEach(function (imagref) {
-      imagref.getDownloadURL().then(function (url) {
-        userImages.push(url);            
-        
+    function1()
+      .then((res) => {
+        return res;
       })
-      setUserImages(userImages)
-      setWait(true)
+      .then((res) => {
+        console.log("res1", res);
+      });
+  }, []);
+  const handleDownload = () => {
+    userimages.map((res) => {
+      console.log(res);
+      fetch(res).then((response) => {
+        console.log(response);
+      });
     });
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    toast.info(errorCode, errorMessage);
-  })
-
-    
-    }, []);
-
-
+  };
   return (
     <>
       <div className="coupleGallaryContainer ">
@@ -62,25 +80,21 @@ function CoupleGallary() {
           <button className="buttonCG" onClick={handleSignOut}>
             Sign Out
           </button>
-          <button className="buttonCG" onClick={()=>{}} type="submit">
+          <button className="buttonCG" onClick={handleDownload} type="submit">
             Download Images
           </button>
         </div>
         <div className="coupleImagesContainer">
-        <div className="coupleImageSlider">
-            {wait?(userimages.map((img, index) => {
-                          console.log('DOM',img)
-                          return (
-                            <div key={index}>
-                              <img  src={img} alt="couple" />;
-                              </div>
-                          )
-                        })):(
-                          <div>
-                            <h1>Loading...</h1>
-                            </div>
-                        )}
-        </div>
+          <div className="coupleImageSlider">
+            {userimages.map((img, index) => {
+              console.log("DOM", img);
+              return (
+                <div key={index}>
+                  <img src={img} alt="couple" />;
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       <ToastContainer
