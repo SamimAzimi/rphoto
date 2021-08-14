@@ -187,13 +187,14 @@ function Adminpanel() {
           .then(() => {
             toast.info("All images uploaded");
             setOneImage("All Images Uploaded");
+            console.log(urlarray)
             setUrlarrays(urlarray);
           })
           .then(() => {
             console.log(urlarrays);
-            const collection = firebase.database().ref(`${refer}/`);
+            const collection = firebase.database().ref(`${refer}`);
 
-            collection.update({ urlarrays });
+            collection.set({urlarrays});
           })
           .catch((err) => console.log(err));
       } else {
@@ -203,7 +204,7 @@ function Adminpanel() {
       toast.warn("Please Type Album Name");
     }
   };
-  console.log(urlarrays);
+
   return (
     <>
       <div className="AdminPanelContainer">

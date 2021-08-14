@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import fire from "../firebase.config";
-import "../style/coupleGallary.css";
-
+// import "../style/coupleGallary.css";
 // import Slider from "react-animated-slider";
 // import "react-animated-slider/build/horizontal.css";
 // import Couple from "../images/gardenCouple.jpeg";
@@ -10,36 +9,38 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function CoupleGallary() {
   const { currentUser } = useContext(Authcontext);
-  const [wait, setWait] = useState(true);
   const [userimages, setUserImages] = useState([]);
+  const [wait,setWait] = useState(true);
   const handleSignOut = () => {
     fire.auth().signOut();
   };
   useEffect(() => {
+    var storageRef = fire.storage().ref("users");
+    
+
     const userImages = [];
-    var storageRef = fire.storage().ref("user");
     storageRef
-      .child(currentUser.uid)
-      .listAll()
-      .then(function (result) {
-        result.items.forEach(function (imagref) {
-          imagref.getDownloadURL().then(function (url) {
-            userImages.push(url);
-          });
-        });
+    .child(currentUser.uid)
+    .listAll()
+    .then(function (result) {
+    result.items.forEach(function (imagref) {
+      imagref.getDownloadURL().then(function (url) {
+        userImages.push(url);            
+        
       })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        toast.info(errorCode, errorMessage);
-      });
-    setUserImages(userImages);
-  }, [currentUser.uid]);
-  const DownloadImages = () => {
-    if (userimages) {
-      setWait(!wait);
-    }
-  };
+      setUserImages(userImages)
+      setWait(true)
+    });
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    toast.info(errorCode, errorMessage);
+  })
+
+    
+    }, []);
+
 
   return (
     <>
@@ -61,20 +62,25 @@ function CoupleGallary() {
           <button className="buttonCG" onClick={handleSignOut}>
             Sign Out
           </button>
-          <button className="buttonCG" type="submit">
+          <button className="buttonCG" onClick={()=>{}} type="submit">
             Download Images
           </button>
         </div>
         <div className="coupleImagesContainer">
-          {wait ? (
-            <div>Loading.....</div>
-          ) : (
-            <div className="coupleImageSlider">
-              {userimages.map((img, index) => {
-                return <img key={index} src={img} alt="couple" />;
-              })}
-            </div>
-          )}
+        <div className="coupleImageSlider">
+            {wait?(userimages.map((img, index) => {
+                          console.log('DOM',img)
+                          return (
+                            <div key={index}>
+                              <img  src={img} alt="couple" />;
+                              </div>
+                          )
+                        })):(
+                          <div>
+                            <h1>Loading...</h1>
+                            </div>
+                        )}
+        </div>
         </div>
       </div>
       <ToastContainer

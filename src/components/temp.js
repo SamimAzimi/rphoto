@@ -80,3 +80,20 @@ const handleUpload = (e) => {
       toast.warn("Please Type Album Name");
     }
   };
+
+
+
+
+
+
+  {wait ? (
+    <div className="coupleImageSlider">
+    {userimages.map((img, index) => {
+      return <img key={index} src={img} alt="couple" />;
+    })}
+  </div>
+
+) : (
+<div>Loading.....</div>
+)}
+</div>

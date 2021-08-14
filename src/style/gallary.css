@@ -1,0 +1,116 @@
+.gallary {
+    column-count:5;
+    -moz-column-count: 5;
+    -webkit-column-count: 5;
+
+    -moz-column-width: 33%;
+    column-width: 33%;
+    padding: 0 12px;
+}
+
+.gallary .pics{
+    transition: all 350ms ease;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.gallary .pics:hover {
+    filter: opacity(.8);
+}
+@media (max-width: 991px){
+    .gallary {
+        column-count:2;
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+    
+        -moz-column-width: 33%;
+        column-width: 33%;
+    }
+}
+
+@media (max-width: 480px){
+    .gallary {
+        column-count:1;
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+    
+        -moz-column-width: 33%;
+        column-width: 33%;
+    }
+}
+.gallaryHeading {
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 50px;
+    backdrop-filter: blur(1px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:10px;
+    font-family: "Satisfy", cursive;
+    color:red;
+}
+/* model */
+
+.loading {
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 50px;
+    backdrop-filter: blur(1px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+}
+
+.model {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 50px;
+    backdrop-filter: blur(1px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+    transition: opacity .4s ease,visibility .4s ease,transform .4s ease-in-out, ;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    overflow: hidden;
+    z-index: 999;
+}
+
+.model.open {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+}
+.model img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    display: block;
+    line-height: 0;
+    box-sizing: border-box;
+    padding: 20px 0 20px;
+    margin:0 auto;
+}
+
+.model .open .svgI{
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    height: 2rem;
+    padding: 5px;
+    background-color: crimson;
+    color:white;
+    cursor: pointer;
+    z-index: 10;
+}
