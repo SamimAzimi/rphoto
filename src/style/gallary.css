@@ -2,15 +2,14 @@
   column-count: 5;
   -moz-column-count: 5;
   -webkit-column-count: 5;
-
-  -moz-column-width: 33%;
-  column-width: 33%;
+  max-width: 100%;
   padding: 0 12px;
 }
 
 .gallaries .pictures {
   transition: all 350ms ease;
   cursor: pointer;
+
   margin-bottom: 12px;
 }
 .gallaries .pictures:hover {
@@ -109,7 +108,6 @@
     column-count: 1;
     -moz-column-count: 1;
     -webkit-column-count: 1;
-
     -moz-column-width: 33%;
     column-width: 33%;
   }
