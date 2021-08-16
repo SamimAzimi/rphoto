@@ -71,3 +71,19 @@ a {
     transform: translateX(0);
   }
 }
+@media (max-width: 480px) {
+  .navicon {
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+
+  .listNavbar > li {
+    list-style: none;
+    line-height: 60px;
+    font-size:8px;
+    border-radius: 50% 50%;
+
+  }
+}

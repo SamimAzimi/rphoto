@@ -50,9 +50,14 @@ function About() {
             </ul>
           </div>
         </div>
+        <div className="contactContainer">
 
-        <SocialMedia />
         <Contact />
+        </div>
+        <div className="socialMediacontainer">
+        <SocialMedia />
+
+        </div>
       </div>
       <ToastContainer />
     </>

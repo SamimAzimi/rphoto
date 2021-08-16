@@ -10,7 +10,7 @@
   border: 2px solid transparent;
   background-clip: padding-box;
   box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
-
+  margin:50px;
   display: grid;
   grid-template-columns: 1.1fr 1.8fr;
   grid-template-rows: 100vh;
