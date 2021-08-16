@@ -77,3 +77,44 @@
   line-height: 1.5;
   color: #392259;
 }
+
+@media (max-width: 480px) { 
+
+  .coupleGallaryContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1px;
+    gap:0 0;
+    border:none;
+    background-clip: padding-box;
+    box-shadow: none;
+    margin:0;
+
+  }
+  .customerPanel {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    margin:10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .coupleImagesContainer {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin-top:500px;
+    z-index: -1;
+    width: 400px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+   
+  }
+
+  .customerPanel {
+
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+}
