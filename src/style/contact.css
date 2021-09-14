@@ -9,7 +9,7 @@
 .formIcons {
   margin-right: 5px;
 }
-input {
+input , textarea {
   width: 98%;
 
   font-family: "Courgette", cursive;
@@ -29,3 +29,17 @@ input {
   box-shadow: 0 8px 32px 0 rgba(194, 196, 223, 0.37);
   backdrop-filter: blur(18px);
 }
+@media (max-width: 480px) {
+  .contactform {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 350px;
+    justify-content: space-evenly;
+  
+  }
+  .sendContactFormButton {
+    height: 50px;
+    
+  }
+ }

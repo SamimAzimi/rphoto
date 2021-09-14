@@ -21,13 +21,13 @@ function Home() {
         </div>
    
     
+        <div className="DetailHome">
+      <h1 className="gridH"><span className="bold">Engagement </span>PhotoGraphy</h1>
+      </div>
         <div className="ContainerImage gridTwo">
           <img src={EgnagePic} alt="Wedding" />
         </div>
-        <div className="DetailHome">
-      <h1><span className="bold">Engagement </span>PhotoGraphy</h1>
   
-      </div>
       <div className="DetailHome">
       <h1><span className="bold">Gathering</span> PhotoGraphy</h1>
       </div>

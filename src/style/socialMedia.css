@@ -31,7 +31,7 @@ ul {
   align-content: center;
   justify-self: center;
   height: 3em;
-
+  display: hidden;
   margin: -1.5em 0 0 -6em;
   width: 12em;
 }
@@ -117,63 +117,11 @@ ul {
 }
 @media (max-width: 480px) {
   .container {
-   
-    grid-column-start: 2;
-    grid-row-start: 2;
-    align-content: center;
-    justify-self: center;
-    height: 1em;
-    left: 0%;
-    margin: 0;
-    width: 5em;
+    grid-column-start: 1;
+    grid-row-start: unset;
+    position: relative;
+    top:100px;
   }
-  .facebook {
-    background: #155b9d;
-    left: -50%;
-    top: 0%;
-  }
+
   
-  .twitter {
-    background: #1a9ec4;
-    bottom: 0;
-    left: -25%;
-  }
-  
-  .dribbble {
-    background: #d05f8f;
-    left: -1%;
-    top: 0%;
-  }
-  
-  .behance {
-    background: #3f7aa3;
-    bottom: 0;
-    left: 50%;
-  }
-  
-  .linked-in {
-    background: #157f9d;
-    left: 25%;
-    top: 0%;
-  }
-  .social li {
-    display: block;
-    height: 4em;
-    line-height: 4em;
-    margin: -2.2em;
-    position: absolute;
-    top: 60%;
-    -webkit-transition: -webkit-transform 0.7s;
-    -moz-transition: -moz-transform 0.7s;
-    -ms-transition: -ms-transform 0.7s;
-    -o-transition: -o-transform 0.7s;
-    transition: transform 0.7s;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    text-align: center;
-    width: 4em;
-  }
 }

@@ -1,10 +1,10 @@
 import Contact from "./Contact";
+import Social from './SocialMedia'
 import { ToastContainer } from "react-toastify";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../style/about.css";
-import Social from './SocialMedia'
 function About() {
   return (
     <>
@@ -52,7 +52,7 @@ function About() {
         <div className="contactContainer">
         <div className="ContactSocialContainer">
         <Contact />
-        <Social />
+       <Social />
           </div>
         </div>
         <div className="socialMediacontainer">
