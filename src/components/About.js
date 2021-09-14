@@ -1,11 +1,10 @@
 import Contact from "./Contact";
-import SocialMedia from "./SocialMedia";
 import { ToastContainer } from "react-toastify";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../style/about.css";
-
+import Social from './SocialMedia'
 function About() {
   return (
     <>
@@ -18,15 +17,15 @@ function About() {
           </p>
           <p>
             ​ I would like to take this time to introduce myself to, “You, Love
-            Ones & Friends”. I am Ramin . My profession as a photography for the
-            <b> past fifteen</b> years, has allow to me the opportunity to
+            Ones & Friends”.<b>I am Ramin </b>. My profession as a photography for the
+            past fifteen years, has allow to me the opportunity to
             express and bring out the very best in me and to one and all. To
             present myself to you, in a professional manner of which I will be
             able to deliver your dream come through for you both, in a time that
             cannot be replace, I “Ramin”, will do. My passion for life in
             photography helps me, to tell a story of a real and true adventure,
             that belongs to both of you. <br /> I approach your event as an{" "}
-            <b>artistic, editorial eye.</b> I capture <b>stunning moments</b>,
+            artistic, editorial eye. I capture stunning moments,
             making them portraits, which carries with it all the little details,
             <br />
             <b>
@@ -51,11 +50,13 @@ function About() {
           </div>
         </div>
         <div className="contactContainer">
-
+        <div className="ContactSocialContainer">
         <Contact />
+        <Social />
+          </div>
         </div>
         <div className="socialMediacontainer">
-        <SocialMedia />
+      
 
         </div>
       </div>

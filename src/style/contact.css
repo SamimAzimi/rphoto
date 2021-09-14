@@ -2,18 +2,16 @@
 .contactform {
   display: flex;
   flex-direction: column;
-  align-items: left;
   height: 300px;
   justify-content: space-evenly;
-  grid-column-start: 3;
-  grid-row-start: 1;
+
 }
 .formIcons {
   margin-right: 5px;
 }
 input {
-  width: 90%;
-  
+  width: 98%;
+
   font-family: "Courgette", cursive;
 }
 .sendContactFormButton {

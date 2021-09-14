@@ -1,47 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&family=STIX+Two+Text&display=swap");
-.abtcontactsocial {
-  margin-top: 90px;
-  display: grid;
-  grid-template-columns: 0.3fr 0.3fr;
-  grid-template-rows: 1fr;
-  gap: 5px 50px;
-  height: auto;
-  max-height: 100%;
-  justify-content: center;
-  align-items: center;
+
+
+.abtcontactsocial{
+  margin-top:23px;
 }
 
-.socialMediacontainer{
- position: fixed;
- right:70px;
- top:80px;
- 
- 
-}
-.aboutStat {
-  grid-column-start: 1;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(255, 255, 255, 0.5);
-  border-radius: 50px;
-  backdrop-filter: blur(1px);
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
-}
-.contactContainer {
-  grid-column-start: 2;
-  width: 100%;
-  background-color: rgb(255, 255, 255, 0.5);
-  border-radius: 50px;
-  backdrop-filter: blur(1px);
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
-}
-.location {
-  align-self: center;
-}
 .aboutStat > h1 {
   font-family: "Courgette", cursive;
   color: rgba(221, 97, 97, 0.767);
@@ -55,42 +18,9 @@
   color: rgba(221, 97, 97, 0.767);
 }
 
-.location > ul > li {
-  list-style: none;
-}
+.ContactSocialContainer {
 
-@media (max-width: 480px) {
-  .abtcontactsocial {
-    padding: 10px;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr;
-    gap: 5px 5px;
-    height: 100vh;
-    overflow: auto;
-  }
-  .aboutStat {
-    grid-column-start: 1;
-    grid-row-start: 1;
-  }
-  .contactContainer {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    height: auto;
-  }
-  .socialMediacontainer{
-    position: unset;
-    justify-self: center;
-    align-self: center;
-    grid-column-start: 1;
-    grid-row-start: 3;
-    height: auto;
-  }
-  .aboutStat > h1 {
-    font-size: 1rem;
-  }
-  .aboutStat > p {
-    font-size: small;
-  }
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-gap: 12px 12px;
 }

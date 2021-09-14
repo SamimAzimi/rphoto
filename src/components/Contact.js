@@ -92,10 +92,10 @@ function Contact() {
             placeholder="Subject"
           />
         </label>
-
+      
         <label htmlFor="Message">
           <FontAwesomeIcon className="formIcons" icon={faComment} />
-          <input
+          < textarea rows="4" cols="70"
             type="text"
             value={person.message}
             onChange={handleChange}
