@@ -86,17 +86,7 @@
   margin: 0 auto;
 }
 
-.model .open .svgI {
-  position: fixed;
-  top: 10px;
-  right: 50px;
-  height: 2rem;
-  padding: 5px;
-  background-color: crimson;
-  color: white;
-  cursor: pointer;
-  z-index: 10;
-}
+
 @media (max-width: 991px) {
   .gallaries {
     column-count: 3;
@@ -113,9 +103,10 @@
     -moz-column-count: 2;
     -webkit-column-count: 2;
     max-width: 100%;
-    padding: 0 12px;
+    padding: 0;
   }
   .gallaryHeading {
     margin-top: 60px;
   }
+
 }

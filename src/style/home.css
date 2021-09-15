@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 :root {
   --primary-color: #bfb188;
   --opacity-color: #f2f2f2;
@@ -33,6 +34,12 @@
   font-family: "Sacramento" cursive ;
   font-family: "Courgette", cursive;
   text-align: center;
+}
+.companyName::first-letter {
+  font-family: 'Pacifico', cursive;
+  color:red;
+  border: 1px solid red;
+  border-radius:  80% 50%;
 }
 li {
   list-style: none;
