@@ -1,13 +1,27 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .clogincontainer {
   margin-top: 20px;
   background: url(../images/brightcouplephotos3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .glassmorph {
@@ -15,10 +29,12 @@
   height: 700px;
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 50px;
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  -webkit-box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+          box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
   line-height: 1.5;
   color: black;
   font-size: 20px;
@@ -27,14 +43,23 @@
 .socialmediaButtons {
   height: 30%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   text-align: center;
 }
 .socialmediabutton:hover {
-  transform: scale(0, 5);
+  -webkit-transform: scale(0, 5);
+      -ms-transform: scale(0, 5);
+          transform: scale(0, 5);
 }
 
 .socialmediabutton {
@@ -42,10 +67,12 @@
   width: 100%;
   outline-style: none;
   border-radius: 50px;
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  -webkit-box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+          box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
   line-height: 1.5;
   color: #392259;
   border-radius: none;
@@ -54,7 +81,8 @@
 }
 .socialmediabutton:hover {
   background-color: rgb(255, 255, 255, 0.8);
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.5);
+  -webkit-box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.5);
+          box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.5);
   line-height: 1.5;
   color: #392259;
   border-radius: none;
@@ -62,10 +90,16 @@
 }
 .emaildispaly {
   font-family: "Sofia", cursive;
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .emaildispaly > input {
   border-radius: 30px;
@@ -75,11 +109,17 @@
   outline-color: white;
 }
 .phonedisplay {
+  display: -ms-grid;
   display: grid;
   font-family: "Sofia", cursive;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .phonedisplay > input {
   border-radius: 30px;
@@ -89,53 +129,95 @@
   outline-color: white;
 }
 .facebook {
-  transition-delay: 10s;
+  -webkit-transition-delay: 10s;
+       -o-transition-delay: 10s;
+          transition-delay: 10s;
+  -webkit-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
 }
 .facebook:hover {
   border-radius: 50% 50%;
-  transform: scale(3, 3);
+  -webkit-transform: scale(3, 3);
+      -ms-transform: scale(3, 3);
+          transform: scale(3, 3);
 }
 .google {
-  transition-delay: 10s;
+  -webkit-transition-delay: 10s;
+       -o-transition-delay: 10s;
+          transition-delay: 10s;
+  -webkit-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
 }
 .google:hover {
   border-radius: 50% 50%;
-  transform: scale(3, 3);
+  -webkit-transform: scale(3, 3);
+      -ms-transform: scale(3, 3);
+          transform: scale(3, 3);
 }
 .twitter {
-  transition-delay: 10s;
+  -webkit-transition-delay: 10s;
+       -o-transition-delay: 10s;
+          transition-delay: 10s;
+  -webkit-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
 }
 .twitter:hover {
   border-radius: 50% 50%;
-  transform: scale(3, 3);
+  -webkit-transform: scale(3, 3);
+      -ms-transform: scale(3, 3);
+          transform: scale(3, 3);
 }
 .phone {
-  transition-delay: 10s;
+  -webkit-transition-delay: 10s;
+       -o-transition-delay: 10s;
+          transition-delay: 10s;
+  -webkit-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
 }
 .phone:hover {
   border-radius: 50% 50%;
-  transform: scale(3, 3);
+  -webkit-transform: scale(3, 3);
+      -ms-transform: scale(3, 3);
+          transform: scale(3, 3);
 }
 .email {
-  transition-delay: 10s;
+  -webkit-transition-delay: 10s;
+       -o-transition-delay: 10s;
+          transition-delay: 10s;
+  -webkit-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
 }
 .email:hover {
   border-radius: 50% 50%;
-  transform: scale(3, 3);
+  -webkit-transform: scale(3, 3);
+      -ms-transform: scale(3, 3);
+          transform: scale(3, 3);
 }
 @media (max-width: 480px) {  
   .socialmediabutton:hover {
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 
 }

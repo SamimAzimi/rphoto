@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .gallaries {
   column-count: 5;
   -moz-column-count: 5;
@@ -7,6 +14,8 @@
 }
 
 .gallaries .pictures {
+  -webkit-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
   transition: all 350ms ease;
   cursor: pointer;
   width: 100%;
@@ -17,16 +26,19 @@
   height: 100%;
 }
 .gallaries .pictures:hover {
-  filter: opacity(0.8);
+  -webkit-filter: opacity(0.8);
+          filter: opacity(0.8);
 }
 
 .gallaryHeading {
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 50px;
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  -webkit-box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+          box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
   text-align: center;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -38,10 +50,12 @@
 .loading {
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 50px;
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  -webkit-box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+          box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
 }
 
 .model {
@@ -50,20 +64,38 @@
   position: fixed;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: rgb(255, 255, 255, 0.5);
   border-radius: 50px;
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  -webkit-box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+          box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.3);
+  -webkit-transition: opacity 0.4s ease, visibility 0.4s ease,
+    -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease, visibility 0.4s ease,
+    -webkit-transform 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease, visibility 0.4s ease,
+    transform 0.4s ease-in-out;
   transition: opacity 0.4s ease, visibility 0.4s ease,
     transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease, visibility 0.4s ease,
+    transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   visibility: hidden;
   opacity: 0;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
   overflow: hidden;
   z-index: 999;
 }
@@ -72,7 +104,9 @@
   display: block;
   visibility: visible;
   opacity: 1;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 .model img {
   width: auto;
@@ -81,7 +115,8 @@
   max-height: 100%;
   display: block;
   line-height: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 20px 0 20px;
   margin: 0 auto;
 }
